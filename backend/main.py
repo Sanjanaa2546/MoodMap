@@ -16,6 +16,11 @@ app = FastAPI()
 def startup():
     init_db()
     seed_db()
+    # Force reseed if empty
+    session = SessionLocal()
+    count = session.query(Place).count()
+    session.close()
+    print(f"✅ Database has {count} places")
 
 app.mount("/frontend", StaticFiles(directory="../frontend"), name="static")
 

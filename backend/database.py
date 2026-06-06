@@ -47,9 +47,17 @@ def init_db():
 def seed_db():
     session = SessionLocal()
 
-    # Check if already seeded
     if session.query(Place).count() > 0:
         print("⚠️ Database already has data — skipping seed.")
+        session.close()
+        return
+
+    # Find places.json
+    BASE_DIR  = os.path.dirname(os.path.abspath(__file__))
+    json_path = os.path.join(BASE_DIR, "../data/places.json")
+
+    if not os.path.exists(json_path):
+        print(f"❌ places.json not found at {json_path}")
         session.close()
         return
 
