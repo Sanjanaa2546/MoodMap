@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MoodMap — Results</title>
+  <link rel="stylesheet" href="/frontend/style.css" />
+</head>
+<body>
+
+  <!-- Background Orbs -->
+  <div class="bg-orb orb1"></div>
+  <div class="bg-orb orb2"></div>
+  <div class="bg-orb orb3"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a href="/frontend/index.html" class="nav-logo"><span class="logo-dot"></span>MoodMap</a>
+    <div class="nav-links">
+      <a href="/frontend/saved.html">Saved</a>
+      <a href="/frontend/index.html" class="nav-cta">Home</a>
+    </div>
+  </nav>
+
+  <!-- Page -->
+  <div class="page-container">
+    <div class="page-inner results-inner">
+
+      <!-- Progress -->
+      <div class="progress-bar">
+        <div class="progress-step done"></div>
+        <div class="progress-step done"></div>
+        <div class="progress-step active"></div>
+      </div>
+
+      <!-- Header -->
+      <div class="results-header">
+        <div>
+          <p class="step-tag">Step 3 of 3</p>
+          <h1 class="page-title" id="resultsTitle">Finding your places...</h1>
+          <p class="page-sub" id="resultsSub">Hang tight while we match your vibe.</p>
+        </div>
+        <a href="/frontend/inputs.html" class="btn-back">← Back</a>
+      </div>
+
+      <!-- Summary Pills -->
+      <div class="summary-pills" id="summaryPills"></div>
+
+      <!-- Search Bar -->
+      <div class="search-wrap">
+        <span class="search-icon">🔍</span>
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Search biryani, coffee, pasta..."
+          oninput="filterCards(this.value)"
+        />
+        <button class="search-clear" id="clearBtn" onclick="clearSearch()" style="display:none;">✕</button>
+      </div>
+
+      <!-- Search Empty State -->
+      <div class="search-empty" id="searchEmpty" style="display:none;">
+        <p>😕 No results for "<span id="searchTerm"></span>"</p>
+        <p class="search-empty-sub">Try biryani, coffee, dosa, beach, art...</p>
+      </div>
+
+      <!-- AI Itinerary Box -->
+      <div class="itinerary-box" id="itineraryBox">
+        <div class="itinerary-tag">✦ AI Itinerary</div>
+        <div class="ai-loading" id="itineraryLoading">
+          <div class="loading-spinner" style="width:18px;height:18px;border-width:2px;"></div>
+          <span>Generating your itinerary...</span>
+        </div>
+        <p class="itinerary-text" id="itineraryText" style="display:none;"></p>
+      </div>
+
+      <!-- Place Cards -->
+      <div class="places-grid" id="placesGrid">
+        <div class="loading-state" id="loadingState">
+          <div class="loading-spinner"></div>
+          <p>Matching your vibe...</p>
+        </div>
+      </div>
+
+      <!-- No Results -->
+      <div class="no-results" id="noResults" style="display:none;">
+        <div class="no-results-icon">🔍</div>
+        <h3>No places found</h3>
+        <p>Try a different mood, city, or increase your budget.</p>
+        <a href="/frontend/inputs.html" class="btn-next" style="margin-top:16px; display:block; text-align:center;">
+          Try Again
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="/frontend/script.js"></script>
+  <script>
+    // ===== GET SAVED DATA =====
+    const mood   = getSelection('mood')   || 'relaxed';
+    const city   = getSelection('city')   || 'Chennai';
+    const budget = getSelection('budget') || '500';
+    const time   = getSelection('time')   || '3';
+
+    const moodEmojis = {
+      relaxed:   '😌 Relaxed',
+      foodie:    '🍜 Foodie',
+      adventure: '⚡ Adventure',
+      nature:    '🌿 Nature',
+      creative:  '🎨 Creative'
+    };
+
+    // ===== UPDATE HEADER =====
+    document.getElementById('resultsTitle').textContent
+      = `Your ${capitalize(mood)} spots in ${city}`;
+    document.getElementById('resultsSub').textContent
+      = `Places matching your vibe · ₹${budget} budget · ${time} hour(s)`;
+
+    // ===== SUMMARY PILLS =====
+    document.getElementById('summaryPills').innerHTML = `
+      <span class="summary-pill">${moodEmojis[mood]}</span>
+      <span class="summary-pill">📍 ${city}</span>
+      <span class="summary-pill">💰 ₹${budget}</span>
+      <span class="summary-pill">⏱️ ${time} hr(s)</span>
+    `;
+
+    // ===== ALL LOADED PLACES (stored for search) =====
+    let allLoadedPlaces = [];
+
+    // ===== FETCH PLACES FROM BACKEND =====
+    async function getPlaces() {
+      const res  = await fetch(`http://127.0.0.1:8000/api/recommend?mood=${mood}&city=${encodeURIComponent(city)}`);
+      const data = await res.json();
+      return data.places;
+    }
+
+    // ===== RENDER CARDS =====
+    async function renderPlaces() {
+      const grid    = document.getElementById('placesGrid');
+      const loading = document.getElementById('loadingState');
+      const noRes   = document.getElementById('noResults');
+
+      let places = [];
+      try {
+        places = await getPlaces();
+      } catch (e) {
+        loading.style.display = 'none';
+        noRes.style.display   = 'block';
+        return;
+      }
+
+      loading.style.display = 'none';
+
+      // Store for search
+      allLoadedPlaces = places;
+
+      if (!places || places.length === 0) {
+        noRes.style.display = 'block';
+        return;
+      }
+
+      places.forEach((place, i) => {
+        const card = document.createElement('div');
+        card.className = 'place-card';
+        card.style.animationDelay = `${i * 0.1}s`;
+        card.innerHTML = `
+          <div class="place-card-top">
+            <div class="place-icon">${getPlaceIcon(place.type)}</div>
+            <div class="place-save" onclick="toggleSave(this, '${place.name}')">🤍</div>
+          </div>
+          <div class="place-name">${place.name}</div>
+          <div class="place-type">${place.type}</div>
+          <div class="place-tags">
+            ${place.tags.map(t => `<span class="place-tag">${t}</span>`).join('')}
+          </div>
+          <div class="place-meta">
+            <span class="place-cost">${formatBudget(place.budget)}</span>
+            <span class="place-duration">⏱ ${place.duration_hrs} hr(s)</span>
+            <span class="place-rating">⭐ ${place.rating}</span>
+          </div>
+        `;
+        card.addEventListener('click', (e) => {
+          if (e.target.classList.contains('place-save')) return;
+          saveSelection('selectedPlace', JSON.stringify(place));
+          window.location.href = '/frontend/place.html';
+        });
+        grid.appendChild(card);
+      });
+
+      // Fetch AI itinerary after cards load
+      fetchItinerary(places[0]);
+    }
+
+    // ===== FETCH AI ITINERARY =====
+    function fetchItinerary(topPlace) {
+      if (!topPlace) {
+        document.getElementById('itineraryLoading').style.display = 'none';
+        document.getElementById('itineraryText').style.display    = 'block';
+        document.getElementById('itineraryText').textContent      = '⚠️ No places to generate itinerary for.';
+        return;
+      }
+
+      fetch(`http://127.0.0.1:8000/api/itinerary?name=${encodeURIComponent(topPlace.name)}&type=${encodeURIComponent(topPlace.type)}&city=${encodeURIComponent(topPlace.city || city)}&mood=${encodeURIComponent(mood)}`)
+        .then(res => res.json())
+        .then(data => {
+          document.getElementById('itineraryLoading').style.display = 'none';
+          document.getElementById('itineraryText').style.display    = 'block';
+          document.getElementById('itineraryText').textContent      = data.suggestion;
+        })
+        .catch(() => {
+          document.getElementById('itineraryLoading').style.display = 'none';
+          document.getElementById('itineraryText').style.display    = 'block';
+          document.getElementById('itineraryText').textContent      = '⚠️ Could not load itinerary. Make sure backend is running.';
+        });
+    }
+
+    // ===== FILTER CARDS =====
+    function filterCards(query) {
+      const clearBtn    = document.getElementById('clearBtn');
+      const searchEmpty = document.getElementById('searchEmpty');
+      const searchTerm  = document.getElementById('searchTerm');
+
+      clearBtn.style.display = query.length > 0 ? 'block' : 'none';
+
+      if (query.trim() === '') {
+        document.querySelectorAll('.place-card').forEach(c => c.style.display = 'flex');
+        searchEmpty.style.display = 'none';
+        return;
+      }
+
+      const q = query.toLowerCase();
+      let matchCount = 0;
+
+      document.querySelectorAll('.place-card').forEach((card, i) => {
+        const place = allLoadedPlaces[i];
+        if (!place) return;
+
+        const searchable = [
+          place.name,
+          place.type,
+          place.description || '',
+          ...(place.tags || [])
+        ].join(' ').toLowerCase();
+
+        if (searchable.includes(q)) {
+          card.style.display = 'flex';
+          matchCount++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      if (matchCount === 0) {
+        searchTerm.textContent    = query;
+        searchEmpty.style.display = 'block';
+      } else {
+        searchEmpty.style.display = 'none';
+      }
+    }
+
+    // ===== CLEAR SEARCH =====
+    function clearSearch() {
+      document.getElementById('searchInput').value     = '';
+      document.getElementById('clearBtn').style.display = 'none';
+      document.getElementById('searchEmpty').style.display = 'none';
+      document.querySelectorAll('.place-card').forEach(c => c.style.display = 'flex');
+    }
+
+    // ===== SAVE TOGGLE =====
+    function toggleSave(btn, name) {
+      const saved = JSON.parse(localStorage.getItem('savedPlaces') || '[]');
+      if (saved.includes(name)) {
+        const updated = saved.filter(n => n !== name);
+        localStorage.setItem('savedPlaces', JSON.stringify(updated));
+        btn.textContent = '🤍';
+      } else {
+        saved.push(name);
+        localStorage.setItem('savedPlaces', JSON.stringify(saved));
+        btn.textContent = '💜';
+      }
+    }
+
+    // ===== HELPER: ICONS =====
+    function getPlaceIcon(type) {
+      const icons = {
+        'beach': '🏖️', 'park': '🌳', 'cafe': '☕',
+        'restaurant': '🍽️', 'street food': '🍜', 'outdoor activity': '🚴',
+        'amusement park': '🎡', 'sports': '🏎️', 'trekking': '🥾',
+        'lake': '💧', 'museum': '🏛️', 'bookstore': '📚',
+        'art': '🎨', 'heritage': '🏯', 'wildlife': '🐘',
+        'temple': '🛕', 'entertainment': '🎭', 'workshop': '🏺',
+        'street walk': '🚶', 'nature': '🌿', 'zoo': '🦁',
+        'science': '🔭', 'mall': '🛍️', 'spiritual': '🧘',
+      };
+      return icons[type.toLowerCase()] || '📍';
+    }
+
+    // ===== HELPER: BUDGET =====
+    function formatBudget(budget) {
+      const map = {
+        'free':   '🆓 Free',
+        'low':    '₹ Low',
+        'medium': '₹₹ Mid',
+        'high':   '₹₹₹ High'
+      };
+      return map[budget?.toLowerCase()] || budget || '—';
+    }
+
+    // ===== HELPER: CAPITALIZE =====
+    function capitalize(str) {
+      return str.charAt(0).toUpperCase() + str.slice(1);
+    }
+
+    // ===== INIT =====
+    renderPlaces();
+  </script>
+
+</body>
+</html>

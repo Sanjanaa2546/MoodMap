@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MoodMap — Saved Places</title>
+  <link rel="stylesheet" href="/frontend/style.css" />
+</head>
+<body>
+
+  <!-- Background Orbs -->
+  <div class="bg-orb orb1"></div>
+  <div class="bg-orb orb2"></div>
+  <div class="bg-orb orb3"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a href="/frontend/index.html" class="nav-logo"><span class="logo-dot"></span>MoodMap</a>
+    <div class="nav-links">
+      <a href="/frontend/saved.html" style="color:#a09aff">Saved</a>
+      <a href="/frontend/index.html" class="nav-cta">Home</a>
+    </div>
+  </nav>
+
+  <!-- Page -->
+  <div class="page-container">
+    <div class="page-inner saved-inner">
+
+      <!-- Header -->
+      <div>
+        <h1 class="page-title">💜 Saved Places</h1>
+        <p class="page-sub">Your favourite spots, all in one place.</p>
+      </div>
+
+      <!-- Empty State -->
+      <div class="empty-state" id="emptyState" style="display:none;">
+        <div class="empty-icon">🗺️</div>
+        <h3>Nothing saved yet</h3>
+        <p>Explore places and tap 🤍 to save them here.</p>
+        <a href="/frontend/mood.html" class="btn-next" style="margin-top:20px; display:block; text-align:center;">
+          Start Exploring →
+        </a>
+      </div>
+
+      <!-- Saved Count -->
+      <div class="saved-meta" id="savedMeta" style="display:none;">
+        <span class="saved-count" id="savedCount">0 places saved</span>
+        <button class="clear-btn" id="clearBtn">Clear All</button>
+      </div>
+
+      <!-- Saved Grid -->
+      <div class="places-grid" id="savedGrid"></div>
+
+    </div>
+  </div>
+
+  <script src="/frontend/script.js"></script>
+  <script>
+    
+    
+    const icons = {
+      'Beach': '🏖️', 'Park': '🌳', 'Cafe': '☕',
+      'Restaurant': '🍽️', 'Street Food': '🍜', 'Outdoor': '🚣',
+      'Theme Park': '🎡', 'Sports': '🏎️', 'Garden': '🌸',
+      'Lake': '💧', 'Museum': '🏛️', 'Bookstore': '📚',
+      'Gallery': '🎨'
+    };
+
+    const moodEmojis = {
+      relaxed: '😌', foodie: '🍜',
+      adventure: '⚡', nature: '🌿', creative: '🎨'
+    };
+
+    // ===== RENDER SAVED =====
+    function renderSaved() {
+      const savedNames = JSON.parse(localStorage.getItem('savedPlaces') || '[]');
+      const grid       = document.getElementById('savedGrid');
+      const empty      = document.getElementById('emptyState');
+      const meta       = document.getElementById('savedMeta');
+      const count      = document.getElementById('savedCount');
+
+      grid.innerHTML = '';
+
+      if (savedNames.length === 0) {
+        empty.style.display = 'flex';
+        meta.style.display  = 'none';
+        return;
+      }
+
+      empty.style.display = 'none';
+      meta.style.display  = 'flex';
+      count.textContent   = `${savedNames.length} place${savedNames.length > 1 ? 's' : ''} saved`;
+
+      const savedPlaces = allPlaces.filter(p => savedNames.includes(p.name));
+
+      savedPlaces.forEach((place, i) => {
+        const card = document.createElement('div');
+        card.className = 'place-card';
+        card.style.animationDelay = `${i * 0.08}s`;
+        card.innerHTML = `
+          <div class="place-card-top">
+            <div class="place-icon">${icons[place.type] || '📍'}</div>
+            <div class="place-save saved" onclick="unsave(this, '${place.name}')">💜</div>
+          </div>
+          <div class="place-name">${place.name}</div>
+          <div class="place-type">${place.type}</div>
+          <div class="saved-mood-tag">
+            ${moodEmojis[place.mood]} ${place.mood.charAt(0).toUpperCase() + place.mood.slice(1)}
+          </div>
+          <div class="place-tags">
+            ${place.tags.map(t => `<span class="place-tag">${t}</span>`).join('')}
+          </div>
+          <div class="place-meta">
+            <span class="place-cost">${place.cost === 0 ? 'Free' : '₹' + place.cost}</span>
+            <span class="place-duration">⏱ ${place.duration} hr(s)</span>
+            <span class="place-rating">⭐ ${place.rating}</span>
+          </div>
+        `;
+        card.addEventListener('click', (e) => {
+          if (e.target.classList.contains('place-save')) return;
+          saveSelection('selectedPlace', JSON.stringify(place));
+          window.location.href = 'place.html';
+        });
+        grid.appendChild(card);
+      });
+    }
+
+    // ===== UNSAVE =====
+    function unsave(btn, name) {
+      const saved   = JSON.parse(localStorage.getItem('savedPlaces') || '[]');
+      const updated = saved.filter(n => n !== name);
+      localStorage.setItem('savedPlaces', JSON.stringify(updated));
+      renderSaved();
+    }
+
+    // ===== CLEAR ALL =====
+    document.getElementById('clearBtn').addEventListener('click', () => {
+      if (confirm('Clear all saved places?')) {
+        localStorage.removeItem('savedPlaces');
+        renderSaved();
+      }
+    });
+
+    renderSaved();
+  </script>
+
+</body>
+</html>

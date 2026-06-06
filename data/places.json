@@ -1,0 +1,992 @@
+[
+  {
+    "id": "p001", "name": "Marina Beach", "city": "Chennai", "state": "Tamil Nadu",
+    "type": "beach", "moods": ["happy", "energetic", "social", "adventurous"],
+    "tags": ["outdoor", "free", "iconic", "sunrise", "evening walk"],
+    "rating": 4.3, "budget": "free", "best_time": "Early morning or evening",
+    "description": "The world's second longest urban beach. Perfect for a breezy walk, street food binge, or just watching the waves with friends.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Marina_Beach_Chennai.jpg/1280px-Marina_Beach_Chennai.jpg",
+    "lat": 13.0500, "lng": 80.2824, "duration_hrs": 2, "solo_friendly": true, "group_friendly": true, "indoor": false
+  },
+  {
+    "id": "p002", "name": "Elliot's Beach", "city": "Chennai", "state": "Tamil Nadu",
+    "type": "beach", "moods": ["calm", "romantic", "reflective", "sad"],
+    "tags": ["quiet", "evening", "couples", "coffee nearby"],
+    "rating": 4.4, "budget": "free", "best_time": "Evening",
+    "description": "A quieter, cleaner beach compared to Marina. Great for sitting alone, reading, or a peaceful evening stroll.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Elliot%27s_Beach%2C_Chennai.jpg/1280px-Elliot%27s_Beach%2C_Chennai.jpg",
+    "lat": 12.9990, "lng": 80.2707, "duration_hrs": 1.5, "solo_friendly": true, "group_friendly": true, "indoor": false
+  },
+  {
+    "id": "p003", "name": "Amethyst Café", "city": "Chennai", "state": "Tamil Nadu",
+    "type": "cafe", "moods": ["calm", "romantic", "reflective", "creative"],
+    "tags": ["cozy", "garden", "brunch", "artsy", "quiet"],
+    "rating": 4.5, "budget": "medium", "best_time": "Morning or afternoon",
+    "description": "A heritage bungalow turned café with lush garden seating. Perfect for slow mornings, journaling, or a date.",
+    "image_url": "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=800",
+    "lat": 13.0561, "lng": 80.2481, "duration_hrs": 2, "solo_friendly": true, "group_friendly": false, "indoor": true
+  },
+  {
+    "id": "p004", "name": "Government Museum Chennai", "city": "Chennai", "state": "Tamil Nadu",
+    "type": "museum", "moods": ["curious", "reflective", "creative", "calm"],
+    "tags": ["art", "history", "heritage", "indoor", "solo"],
+    "rating": 4.0, "budget": "low", "best_time": "Anytime",
+    "description": "India's second-oldest museum with ancient bronzes, Roman coins, and anthropology galleries.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Government_Museum_Chennai.jpg/800px-Government_Museum_Chennai.jpg",
+    "lat": 13.0700, "lng": 80.2590, "duration_hrs": 2.5, "solo_friendly": true, "group_friendly": true, "indoor": true
+  },
+  {
+    "id": "p005", "name": "Murugan Idli Shop", "city": "Chennai", "state": "Tamil Nadu",
+    "type": "restaurant", "moods": ["happy", "calm"],
+    "tags": ["idli", "comfort food", "breakfast", "iconic", "affordable", "south indian"],
+    "rating": 4.5, "budget": "low", "best_time": "Breakfast",
+    "description": "World-famous soft idlis with a dozen chutney varieties. If you're in Chennai and haven't been here, have you even been to Chennai?",
+    "image_url": "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=800",
+    "lat": 13.0433, "lng": 80.2555, "duration_hrs": 0.5, "solo_friendly": true, "group_friendly": true, "indoor": true
+  },
+  {
+    "id": "p006", "name": "Saravanaa Bhavan", "city": "Chennai", "state": "Tamil Nadu",
+    "type": "restaurant", "moods": ["happy", "calm", "social"],
+    "tags": ["comfort food", "south indian", "affordable", "dosa", "iconic", "thali"],
+    "rating": 4.4, "budget": "low", "best_time": "Breakfast or lunch",
+    "description": "The legendary Chennai-born South Indian chain. Crispy dosas, hot filter coffee, and a warm familiar feeling.",
+    "image_url": "https://images.unsplash.com/photo-1630383249896-424e482df921?w=800",
+    "lat": 13.0563, "lng": 80.2461, "duration_hrs": 1, "solo_friendly": true, "group_friendly": true, "indoor": true
+  },
+  {
+    "id": "p007", "name": "Birriyanis & More", "city": "Chennai", "state": "Tamil Nadu",
+    "type": "restaurant", "moods": ["happy", "social", "energetic"],
+    "tags": ["biryani", "biriyani", "comfort food", "affordable", "crowd favourite", "ambur"],
+    "rating": 4.3, "budget": "low", "best_time": "Lunch",
+    "description": "Famous for their Ambur-style biryani and portions that make you regret nothing.",
+    "image_url": "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=800",
+    "lat": 13.0486, "lng": 80.2137, "duration_hrs": 1, "solo_friendly": true, "group_friendly": true, "indoor": true
+  },
+  {
+    "id": "p008", "name": "Cafe Ekdum", "city": "Chennai", "state": "Tamil Nadu",
+    "type": "cafe", "moods": ["happy", "social", "energetic"],
+    "tags": ["biryani", "biriyani", "lively", "affordable", "college crowd"],
+    "rating": 4.2, "budget": "low", "best_time": "Lunch or dinner",
+    "description": "A quirky, vibrant café known for its biryanis and playful decor. Great vibes for a casual group meal.",
+    "image_url": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800",
+    "lat": 13.0067, "lng": 80.2206, "duration_hrs": 1.5, "solo_friendly": true, "group_friendly": true, "indoor": true
+  },
+  {
+    "id": "p009", "name": "Surfing at Covelong Point", "city": "Chennai", "state": "Tamil Nadu",
+    "type": "sports", "moods": ["adventurous", "energetic", "happy"],
+    "tags": ["surfing", "beach", "ECR", "lessons", "active", "water sport"],
+    "rating": 4.5, "budget": "medium", "best_time": "Morning",
+    "description": "One of South India's best surfing spots. Covelong Point Surf School offers lessons for beginners.",
+    "image_url": "https://images.unsplash.com/photo-1502680390469-be75c86b636f?w=800",
+    "lat": 12.8295, "lng": 80.2417, "duration_hrs": 3, "solo_friendly": true, "group_friendly": true, "indoor": false
+  },
+  {
+    "id": "p010", "name": "DakshinaChitra Heritage Museum", "city": "Chennai", "state": "Tamil Nadu",
+    "type": "museum", "moods": ["creative", "curious", "calm", "reflective"],
+    "tags": ["art", "craft", "culture", "south india", "educational", "heritage"],
+    "rating": 4.5, "budget": "low", "best_time": "Morning",
+    "description": "A living museum of South Indian art, architecture, and traditions.",
+    "image_url": "https://images.unsplash.com/photo-1594761051656-33894f9e8a40?w=800",
+    "lat": 12.8550, "lng": 80.2395, "duration_hrs": 3, "solo_friendly": true, "group_friendly": true, "indoor": false
+  },
+  {
+    "id": "p011", "name": "Guindy National Park", "city": "Chennai", "state": "Tamil Nadu",
+    "type": "park", "moods": ["calm", "adventurous", "energetic"],
+    "tags": ["deer", "nature walk", "inside city", "free", "wildlife"],
+    "rating": 4.0, "budget": "free", "best_time": "Morning",
+    "description": "A rare urban national park inside Chennai with blackbucks, spotted deer, and dense forest.",
+    "image_url": "https://images.unsplash.com/photo-1448375240586-882707db888b?w=800",
+    "lat": 13.0050, "lng": 80.2200, "duration_hrs": 2, "solo_friendly": true, "group_friendly": true, "indoor": false
+  },
+  {
+    "id": "p012", "name": "Cholamandal Artists Village", "city": "Chennai", "state": "Tamil Nadu",
+    "type": "art", "moods": ["creative", "curious", "calm", "reflective"],
+    "tags": ["art village", "painters", "sculptures", "unique", "solo"],
+    "rating": 4.2, "budget": "low", "best_time": "Morning",
+    "description": "Asia's largest community of visual artists. Browse studios, buy original art, and walk through sculpture gardens.",
+    "image_url": "https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?w=800",
+    "lat": 12.9000, "lng": 80.2300, "duration_hrs": 2, "solo_friendly": true, "group_friendly": true, "indoor": false
+  },
+  {
+    "id": "p013", "name": "Pottery Class at Studio Ochre", "city": "Chennai", "state": "Tamil Nadu",
+    "type": "workshop", "moods": ["creative", "calm", "curious", "sad"],
+    "tags": ["pottery", "hands-on", "therapeutic", "workshop", "solo activity"],
+    "rating": 4.6, "budget": "medium", "best_time": "Afternoon",
+    "description": "Learn to throw clay on a wheel in a peaceful studio. Incredibly meditative and satisfying.",
+    "image_url": "https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=800",
+    "lat": 13.0490, "lng": 80.2490, "duration_hrs": 2, "solo_friendly": true, "group_friendly": true, "indoor": true
+  },
+  {
+    "id": "p014", "name": "Mylapore Cultural Walk", "city": "Chennai", "state": "Tamil Nadu",
+    "type": "street walk", "moods": ["curious", "creative", "calm"],
+    "tags": ["cultural", "heritage walk", "filter coffee", "street food", "solo"],
+    "rating": 4.5, "budget": "free", "best_time": "Morning",
+    "description": "Wander through Mylapore's flower market, Brahmin coffee shops, kolam-decorated streets.",
+    "image_url": "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=800",
+    "lat": 13.0340, "lng": 80.2693, "duration_hrs": 2, "solo_friendly": true, "group_friendly": true, "indoor": false
+  },
+  {
+    "id": "p015", "name": "Kapaleeshwarar Temple", "city": "Chennai", "state": "Tamil Nadu",
+    "type": "temple", "moods": ["reflective", "calm", "sad", "spiritual"],
+    "tags": ["dravidian architecture", "heritage", "spiritual", "mylapore"],
+    "rating": 4.7, "budget": "free", "best_time": "Early morning or evening aarti",
+    "description": "A stunning 7th-century Dravidian temple in the heart of Mylapore.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Kapaleeshwarar_Temple.jpg/800px-Kapaleeshwarar_Temple.jpg",
+    "lat": 13.0340, "lng": 80.2693, "duration_hrs": 1, "solo_friendly": true, "group_friendly": true, "indoor": false
+  },
+  {
+    "id": "p016", "name": "The Brew Room", "city": "Chennai", "state": "Tamil Nadu",
+    "type": "cafe", "moods": ["creative", "calm", "curious"],
+    "tags": ["specialty coffee", "quiet", "laptop-friendly", "solo", "filter coffee"],
+    "rating": 4.4, "budget": "medium", "best_time": "Anytime",
+    "description": "One of Chennai's best specialty coffee spots. Clean, minimal, and laptop-friendly.",
+    "image_url": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800",
+    "lat": 13.0100, "lng": 80.2350, "duration_hrs": 2, "solo_friendly": true, "group_friendly": false, "indoor": true
+  },
+  {
+    "id": "p017", "name": "Higginbothams Bookstore", "city": "Chennai", "state": "Tamil Nadu",
+    "type": "bookstore", "moods": ["calm", "creative", "reflective", "sad", "curious"],
+    "tags": ["books", "oldest bookstore", "solo", "quiet", "heritage"],
+    "rating": 4.3, "budget": "free", "best_time": "Anytime",
+    "description": "India's oldest bookstore, established in 1844 on Mount Road.",
+    "image_url": "https://images.unsplash.com/photo-1526285759904-71d1170ed2969?w=800",
+    "lat": 13.0665, "lng": 80.2751, "duration_hrs": 1.5, "solo_friendly": true, "group_friendly": false, "indoor": true
+  },
+  {
+    "id": "p018", "name": "Broken Tusk Brewery", "city": "Chennai", "state": "Tamil Nadu",
+    "type": "restaurant", "moods": ["happy", "social", "energetic"],
+    "tags": ["craft beer", "live music", "group outing", "nightlife", "brewery"],
+    "rating": 4.3, "budget": "high", "best_time": "Evening",
+    "description": "Chennai's popular microbrewery with in-house craft beers, live music weekends, and good food.",
+    "image_url": "https://images.unsplash.com/photo-1555658636-6e4a3ddf938c?w=800",
+    "lat": 13.0067, "lng": 80.2180, "duration_hrs": 3, "solo_friendly": false, "group_friendly": true, "indoor": true
+  },
+  {
+    "id": "p019", "name": "Pondicherry Promenade Beach", "city": "Pondicherry", "state": "Puducherry",
+    "type": "beach", "moods": ["romantic", "calm", "reflective", "happy"],
+    "tags": ["french town", "sunrise", "road trip", "heritage", "instagram"],
+    "rating": 4.5, "budget": "free", "best_time": "Early morning or evening",
+    "description": "A colonial-era beachside promenade lined with colorful French villas. Best sunrise spot in South India.",
+    "image_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800",
+    "lat": 11.9340, "lng": 79.8360, "duration_hrs": 2, "solo_friendly": true, "group_friendly": true, "indoor": false
+  },
+  {
+    "id": "p020", "name": "Pondicherry White Town Walk", "city": "Pondicherry", "state": "Puducherry",
+    "type": "street walk", "moods": ["creative", "romantic", "calm", "curious"],
+    "tags": ["french colonial", "photography", "walking tour", "cafe hopping", "instagram"],
+    "rating": 4.7, "budget": "free", "best_time": "Early morning",
+    "description": "Wander through yellow and pastel-painted French colonial streets with bougainvillea overhanging.",
+    "image_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800",
+    "lat": 11.9340, "lng": 79.8310, "duration_hrs": 2, "solo_friendly": true, "group_friendly": true, "indoor": false
+  },
+  {
+    "id": "p021", "name": "Cafe des Arts Pondicherry", "city": "Pondicherry", "state": "Puducherry",
+    "type": "cafe", "moods": ["creative", "calm", "romantic"],
+    "tags": ["french cafe", "art", "croissant", "coffee", "quiet", "colonial"],
+    "rating": 4.4, "budget": "medium", "best_time": "Morning",
+    "description": "A charming French-style café in the heart of White Town. Croissants, filter coffee, and art on the walls.",
+    "image_url": "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=800",
+    "lat": 11.9356, "lng": 79.8320, "duration_hrs": 1.5, "solo_friendly": true, "group_friendly": true, "indoor": true
+  },
+  {
+    "id": "p022", "name": "Auroville", "city": "Pondicherry", "state": "Tamil Nadu",
+    "type": "spiritual", "moods": ["reflective", "calm", "creative", "curious"],
+    "tags": ["meditation", "experimental township", "nature", "unique", "matrimandir"],
+    "rating": 4.4, "budget": "free", "best_time": "Morning",
+    "description": "An experimental international township built around the Matrimandir. A place for meditation, silence, and clarity.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Matrimandir_in_Auroville.jpg/800px-Matrimandir_in_Auroville.jpg",
+    "lat": 12.0049, "lng": 79.8107, "duration_hrs": 4, "solo_friendly": true, "group_friendly": true, "indoor": false
+  },
+  {
+    "id": "p023", "name": "Karuvadikuppam Mangrove Walk", "city": "Pondicherry", "state": "Puducherry",
+    "type": "nature", "moods": ["calm", "adventurous", "reflective"],
+    "tags": ["mangroves", "bird watching", "kayaking", "eco-tourism", "hidden gem"],
+    "rating": 4.4, "budget": "low", "best_time": "Morning",
+    "description": "Kayak or walk through dense mangroves near Pondicherry. A quiet, almost surreal experience.",
+    "image_url": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800",
+    "lat": 11.9800, "lng": 79.8600, "duration_hrs": 3, "solo_friendly": true, "group_friendly": true, "indoor": false
+  },
+  {
+    "id": "p024", "name": "Le Cafe Pondicherry", "city": "Pondicherry", "state": "Puducherry",
+    "type": "cafe", "moods": ["calm", "romantic", "happy"],
+    "tags": ["sea facing", "filter coffee", "croissant", "french", "sunset"],
+    "rating": 4.3, "budget": "medium", "best_time": "Evening",
+    "description": "A government-run sea-facing café on the promenade. Best spot for coffee while watching the waves at sunset.",
+    "image_url": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800",
+    "lat": 11.9345, "lng": 79.8370, "duration_hrs": 1.5, "solo_friendly": true, "group_friendly": true, "indoor": true
+  },
+  {
+    "id": "p025", "name": "Meenakshi Amman Temple", "city": "Madurai", "state": "Tamil Nadu",
+    "type": "temple", "moods": ["reflective", "curious", "calm", "adventurous"],
+    "tags": ["UNESCO", "dravidian", "colorful", "heritage", "spiritual", "gopuram"],
+    "rating": 4.8, "budget": "free", "best_time": "Morning or evening aarti",
+    "description": "One of India's most magnificent temples — 14 towering gopurams with 33,000 sculptures.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Meenakshi_Amman_Temple_Madurai.jpg/1280px-Meenakshi_Amman_Temple_Madurai.jpg",
+    "lat": 9.9195, "lng": 78.1193, "duration_hrs": 2, "solo_friendly": true, "group_friendly": true, "indoor": false
+  },
+  {
+    "id": "p026", "name": "Murugan Idli Shop Madurai", "city": "Madurai", "state": "Tamil Nadu",
+    "type": "restaurant", "moods": ["happy", "calm", "social"],
+    "tags": ["idli", "south indian", "breakfast", "affordable", "iconic", "comfort food"],
+    "rating": 4.5, "budget": "low", "best_time": "Breakfast",
+    "description": "The Madurai branch of the legendary idli shop. Same fluffy idlis, dozens of chutneys.",
+    "image_url": "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=800",
+    "lat": 9.9252, "lng": 78.1198, "duration_hrs": 0.5, "solo_friendly": true, "group_friendly": true, "indoor": true
+  },
+  {
+    "id": "p027", "name": "Thirumalai Nayakkar Palace", "city": "Madurai", "state": "Tamil Nadu",
+    "type": "heritage", "moods": ["curious", "reflective", "creative"],
+    "tags": ["palace", "history", "architecture", "dravidian", "mughal", "heritage"],
+    "rating": 4.3, "budget": "low", "best_time": "Morning",
+    "description": "A 17th-century palace with stunning Dravidian-Mughal architecture. The light-and-sound show in the evening is unforgettable.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Thirumalai_Nayakar_Mahal.jpg/1280px-Thirumalai_Nayakar_Mahal.jpg",
+    "lat": 9.9195, "lng": 78.1250, "duration_hrs": 2, "solo_friendly": true, "group_friendly": true, "indoor": false
+  },
+  {
+    "id": "p028", "name": "Vandiyur Mariamman Teppakulam", "city": "Madurai", "state": "Tamil Nadu",
+    "type": "park", "moods": ["calm", "reflective", "romantic"],
+    "tags": ["temple tank", "peaceful", "boating", "heritage", "serene"],
+    "rating": 4.2, "budget": "low", "best_time": "Evening",
+    "description": "A massive temple tank with a central island shrine. Boating available and breathtakingly peaceful at sunset.",
+    "image_url": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800",
+    "lat": 9.9050, "lng": 78.1350, "duration_hrs": 1.5, "solo_friendly": true, "group_friendly": true, "indoor": false
+  },
+  {
+    "id": "p029", "name": "Madurai Street Food Walk", "city": "Madurai", "state": "Tamil Nadu",
+    "type": "street walk", "moods": ["happy", "social", "curious"],
+    "tags": ["street food", "jigarthanda", "parotta", "kari", "local", "foodie"],
+    "rating": 4.6, "budget": "low", "best_time": "Evening",
+    "description": "Madurai is a foodie paradise. Try jigarthanda, parotta-salna, and mutton kari at the legendary street stalls near the temple.",
+    "image_url": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800",
+    "lat": 9.9195, "lng": 78.1193, "duration_hrs": 2, "solo_friendly": true, "group_friendly": true, "indoor": false
+  },
+  {
+    "id": "p030", "name": "Ooty Botanical Garden", "city": "Ooty", "state": "Tamil Nadu",
+    "type": "park", "moods": ["calm", "romantic", "happy", "reflective"],
+    "tags": ["flowers", "hills", "picnic", "weekend getaway", "nilgiris"],
+    "rating": 4.3, "budget": "low", "best_time": "Daytime",
+    "description": "A 22-hectare botanical garden with 650+ plant species in the Nilgiri hills.",
+    "image_url": "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800",
+    "lat": 11.4102, "lng": 76.6950, "duration_hrs": 3, "solo_friendly": true, "group_friendly": true, "indoor": false
+  },
+  {
+    "id": "p031", "name": "Nilgiri Mountain Railway", "city": "Ooty", "state": "Tamil Nadu",
+    "type": "heritage", "moods": ["adventurous", "romantic", "happy", "reflective"],
+    "tags": ["UNESCO", "toy train", "scenic", "bucket list", "hills", "tea estates"],
+    "rating": 4.7, "budget": "low", "best_time": "Morning",
+    "description": "Board the iconic UNESCO-listed toy train. Chug through 16 tunnels, 208 curves, and emerald tea estates.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Nilgiri_Mountain_Railway_train.jpg/1280px-Nilgiri_Mountain_Railway_train.jpg",
+    "lat": 11.2975, "lng": 76.9342, "duration_hrs": 5, "solo_friendly": true, "group_friendly": true, "indoor": false
+  },
+  {
+    "id": "p032", "name": "Hike to Doddabetta Peak", "city": "Ooty", "state": "Tamil Nadu",
+    "type": "trekking", "moods": ["adventurous", "energetic", "reflective"],
+    "tags": ["highest peak", "hike", "views", "fitness", "nilgiris", "trekking"],
+    "rating": 4.4, "budget": "low", "best_time": "Early morning",
+    "description": "The highest peak in the Nilgiri hills at 2637m. Breathtaking views above the cloud line.",
+    "image_url": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800",
+    "lat": 11.4077, "lng": 76.7349, "duration_hrs": 4, "solo_friendly": true, "group_friendly": true, "indoor": false
+  },
+  {
+    "id": "p033", "name": "Ooty Lake Boating", "city": "Ooty", "state": "Tamil Nadu",
+    "type": "lake", "moods": ["calm", "romantic", "happy"],
+    "tags": ["boating", "hills", "mist", "peaceful", "couples"],
+    "rating": 4.1, "budget": "low", "best_time": "Morning",
+    "description": "A picturesque artificial lake surrounded by eucalyptus trees. Pedal boats and row boats available.",
+    "image_url": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800",
+    "lat": 11.4060, "lng": 76.6930, "duration_hrs": 2, "solo_friendly": true, "group_friendly": true, "indoor": false
+  },
+  {
+    "id": "p034", "name": "Ooty Tea Factory Visit", "city": "Ooty", "state": "Tamil Nadu",
+    "type": "workshop", "moods": ["curious", "creative", "calm"],
+    "tags": ["tea", "factory", "nilgiris", "educational", "unique", "tasting"],
+    "rating": 4.2, "budget": "low", "best_time": "Morning",
+    "description": "Tour a working tea factory, learn how Nilgiri tea is processed, and sample fresh brews.",
+    "image_url": "https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=800",
+    "lat": 11.4102, "lng": 76.7000, "duration_hrs": 2, "solo_friendly": true, "group_friendly": true, "indoor": true
+  },
+  {
+    "id": "p035", "name": "Mudumalai National Park", "city": "Ooty", "state": "Tamil Nadu",
+    "type": "wildlife", "moods": ["adventurous", "energetic", "calm"],
+    "tags": ["safari", "elephant", "tiger reserve", "nature", "weekend getaway"],
+    "rating": 4.5, "budget": "medium", "best_time": "Early morning",
+    "description": "A wildlife sanctuary at the confluence of Tamil Nadu, Karnataka, and Kerala. Spot elephants, gaurs, and tigers.",
+    "image_url": "https://images.unsplash.com/photo-1564760055775-d63b17a55c44?w=800",
+    "lat": 11.5700, "lng": 76.6300, "duration_hrs": 6, "solo_friendly": false, "group_friendly": true, "indoor": false
+  },
+  {
+    "id": "p036", "name": "Kodaikanal Lake", "city": "Kodaikanal", "state": "Tamil Nadu",
+    "type": "lake", "moods": ["romantic", "calm", "happy", "reflective"],
+    "tags": ["boating", "hills", "mist", "cycling", "weekend getaway", "couples"],
+    "rating": 4.4, "budget": "low", "best_time": "Morning",
+    "description": "A star-shaped lake in the Palani hills surrounded by pine trees and mist.",
+    "image_url": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800",
+    "lat": 10.2380, "lng": 77.4890, "duration_hrs": 3, "solo_friendly": true, "group_friendly": true, "indoor": false
+  },
+  {
+    "id": "p037", "name": "Coaker's Walk Kodaikanal", "city": "Kodaikanal", "state": "Tamil Nadu",
+    "type": "park", "moods": ["calm", "romantic", "reflective"],
+    "tags": ["valley view", "mist", "morning walk", "scenic", "peaceful"],
+    "rating": 4.3, "budget": "low", "best_time": "Early morning",
+    "description": "A scenic 1km pedestrian path on the edge of a cliff. On clear days you can see the plains 2000m below.",
+    "image_url": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800",
+    "lat": 10.2300, "lng": 77.4900, "duration_hrs": 1.5, "solo_friendly": true, "group_friendly": true, "indoor": false
+  },
+  {
+    "id": "p038", "name": "Trekking to Dolphin's Nose", "city": "Kodaikanal", "state": "Tamil Nadu",
+    "type": "trekking", "moods": ["adventurous", "energetic", "reflective"],
+    "tags": ["trek", "views", "valley", "fitness", "nature", "hills"],
+    "rating": 4.4, "budget": "low", "best_time": "Early morning",
+    "description": "A moderate 8km trek to a rock formation overlooking the Palani valley. Misty, dramatic, and rewarding.",
+    "image_url": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800",
+    "lat": 10.2450, "lng": 77.5100, "duration_hrs": 5, "solo_friendly": true, "group_friendly": true, "indoor": false
+  },
+  {
+    "id": "p039", "name": "Cafe Cariappa Kodaikanal", "city": "Kodaikanal", "state": "Tamil Nadu",
+    "type": "cafe", "moods": ["calm", "creative", "romantic"],
+    "tags": ["cozy", "hills", "coffee", "homemade food", "quiet", "mist"],
+    "rating": 4.5, "budget": "medium", "best_time": "Anytime",
+    "description": "A cozy hillside café with homemade food, great coffee, and misty views. Perfect for a slow rainy afternoon.",
+    "image_url": "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=800",
+    "lat": 10.2350, "lng": 77.4870, "duration_hrs": 2, "solo_friendly": true, "group_friendly": true, "indoor": true
+  },
+  {
+    "id": "p040", "name": "Pamban Bridge", "city": "Rameswaram", "state": "Tamil Nadu",
+    "type": "heritage", "moods": ["adventurous", "reflective", "curious"],
+    "tags": ["bridge", "sea", "road trip", "spiritual", "unique", "iconic"],
+    "rating": 4.6, "budget": "low", "best_time": "Daytime",
+    "description": "Cross the iconic Pamban Bridge over the Palk Strait to reach the sacred island of Rameswaram.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Pamban_bridge.jpg/1280px-Pamban_bridge.jpg",
+    "lat": 9.2876, "lng": 79.3129, "duration_hrs": 5, "solo_friendly": true, "group_friendly": true, "indoor": false
+  },
+  {
+    "id": "p041", "name": "Ramanathaswamy Temple", "city": "Rameswaram", "state": "Tamil Nadu",
+    "type": "temple", "moods": ["reflective", "calm", "spiritual"],
+    "tags": ["spiritual", "corridors", "pilgrimage", "heritage", "peaceful"],
+    "rating": 4.7, "budget": "free", "best_time": "Morning",
+    "description": "One of the 12 Jyotirlinga temples with the longest temple corridor in India at 1220 meters.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Ramanathaswamy_Temple.jpg/800px-Ramanathaswamy_Temple.jpg",
+    "lat": 9.2882, "lng": 79.3174, "duration_hrs": 2, "solo_friendly": true, "group_friendly": true, "indoor": false
+  },
+  {
+    "id": "p042", "name": "Kanyakumari Sunrise Point", "city": "Kanyakumari", "state": "Tamil Nadu",
+    "type": "heritage", "moods": ["reflective", "calm", "adventurous", "curious"],
+    "tags": ["tip of india", "sunrise", "3 seas", "spiritual", "bucket list"],
+    "rating": 4.7, "budget": "free", "best_time": "Sunrise",
+    "description": "The southernmost tip of India where the Arabian Sea, Bay of Bengal, and Indian Ocean meet.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Kanyakumari_Sunrise.jpg/1280px-Kanyakumari_Sunrise.jpg",
+    "lat": 8.0883, "lng": 77.5385, "duration_hrs": 3, "solo_friendly": true, "group_friendly": true, "indoor": false
+  },
+  {
+    "id": "p043", "name": "Vivekananda Rock Memorial", "city": "Kanyakumari", "state": "Tamil Nadu",
+    "type": "heritage", "moods": ["reflective", "calm", "curious"],
+    "tags": ["spiritual", "island", "ferry", "meditation", "iconic"],
+    "rating": 4.6, "budget": "low", "best_time": "Morning",
+    "description": "A memorial built on a rock island where Swami Vivekananda meditated. Take a ferry and feel the sea breeze.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Vivekananda_Rock_Memorial.jpg/800px-Vivekananda_Rock_Memorial.jpg",
+    "lat": 8.0771, "lng": 77.5522, "duration_hrs": 2, "solo_friendly": true, "group_friendly": true, "indoor": false
+  },
+  {
+    "id": "p044", "name": "Brihadeeswarar Temple", "city": "Thanjavur", "state": "Tamil Nadu",
+    "type": "temple", "moods": ["reflective", "curious", "creative"],
+    "tags": ["UNESCO", "chola", "architecture", "heritage", "1000 years old"],
+    "rating": 4.8, "budget": "free", "best_time": "Morning",
+    "description": "A 1000-year-old Chola masterpiece and UNESCO World Heritage Site. The 66m vimana was built without scaffolding.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Brihadeeswara_Temple_Thanjavur.jpg/1280px-Brihadeeswara_Temple_Thanjavur.jpg",
+    "lat": 10.7828, "lng": 79.1318, "duration_hrs": 2, "solo_friendly": true, "group_friendly": true, "indoor": false
+  },
+  {
+    "id": "p045", "name": "Thanjavur Art Gallery", "city": "Thanjavur", "state": "Tamil Nadu",
+    "type": "museum", "moods": ["creative", "curious", "calm"],
+    "tags": ["chola bronzes", "art", "heritage", "history", "sculptures"],
+    "rating": 4.3, "budget": "low", "best_time": "Morning",
+    "description": "Home to an exceptional collection of Chola bronze sculptures and Tanjore paintings.",
+    "image_url": "https://images.unsplash.com/photo-1594761051656-33894f9e8a40?w=800",
+    "lat": 10.7867, "lng": 79.1378, "duration_hrs": 2, "solo_friendly": true, "group_friendly": true, "indoor": true
+  },
+  {
+    "id": "p046", "name": "Tanjore Plate Restaurant", "city": "Thanjavur", "state": "Tamil Nadu",
+    "type": "restaurant", "moods": ["happy", "calm", "curious"],
+    "tags": ["tanjore cuisine", "south indian", "thali", "authentic", "local"],
+    "rating": 4.4, "budget": "low", "best_time": "Lunch",
+    "description": "Authentic Thanjavur cuisine — rich, aromatic curries, appam, and the famous Kavuni Arisi (black rice pudding).",
+    "image_url": "https://images.unsplash.com/photo-1630383249896-424e482df921?w=800",
+    "lat": 10.7860, "lng": 79.1400, "duration_hrs": 1, "solo_friendly": true, "group_friendly": true, "indoor": true
+  },
+  {
+    "id": "p047", "name": "Coimbatore Botanical Garden", "city": "Coimbatore", "state": "Tamil Nadu",
+    "type": "park", "moods": ["calm", "reflective", "happy"],
+    "tags": ["garden", "peaceful", "morning walk", "flowers", "family"],
+    "rating": 4.1, "budget": "low", "best_time": "Morning",
+    "description": "A well-maintained botanical garden in the heart of Coimbatore with hundreds of plant species.",
+    "image_url": "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800",
+    "lat": 11.0168, "lng": 76.9558, "duration_hrs": 2, "solo_friendly": true, "group_friendly": true, "indoor": false
+  },
+  {
+    "id": "p048", "name": "Marudhamalai Temple Trek", "city": "Coimbatore", "state": "Tamil Nadu",
+    "type": "trekking", "moods": ["adventurous", "reflective", "energetic"],
+    "tags": ["trek", "temple", "hills", "spiritual", "fitness", "views"],
+    "rating": 4.3, "budget": "free", "best_time": "Early morning",
+    "description": "Trek up the Marudhamalai hills to a Murugan temple with panoramic views of Coimbatore city.",
+    "image_url": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800",
+    "lat": 11.0700, "lng": 76.9000, "duration_hrs": 3, "solo_friendly": true, "group_friendly": true, "indoor": false
+  },
+  {
+    "id": "p049", "name": "Coimbatore Street Food at Town Hall", "city": "Coimbatore", "state": "Tamil Nadu",
+    "type": "street walk", "moods": ["happy", "social", "curious"],
+    "tags": ["street food", "kothu parotta", "salna", "local", "affordable", "foodie"],
+    "rating": 4.4, "budget": "low", "best_time": "Evening",
+    "description": "Coimbatore's legendary street food scene around Town Hall. Kothu parotta, salna, and fresh juices.",
+    "image_url": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800",
+    "lat": 11.0168, "lng": 76.9558, "duration_hrs": 2, "solo_friendly": true, "group_friendly": true, "indoor": false
+  },
+  {
+    "id": "p050", "name": "Isha Yoga Center", "city": "Coimbatore", "state": "Tamil Nadu",
+    "type": "spiritual", "moods": ["reflective", "calm", "creative"],
+    "tags": ["yoga", "meditation", "dhyanalinga", "peaceful", "spiritual", "unique"],
+    "rating": 4.7, "budget": "free", "best_time": "Morning",
+    "description": "The Isha Yoga Center at the foothills of Velliangiri with the stunning Dhyanalinga meditation space.",
+    "image_url": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800",
+    "lat": 10.9341, "lng": 76.8268, "duration_hrs": 3, "solo_friendly": true, "group_friendly": true, "indoor": false
+  },
+  {
+    "id": "p051", "name": "Cafe Amaretto Coimbatore", "city": "Coimbatore", "state": "Tamil Nadu",
+    "type": "cafe", "moods": ["calm", "creative", "happy"],
+    "tags": ["specialty coffee", "cozy", "desserts", "instagram", "quiet"],
+    "rating": 4.3, "budget": "medium", "best_time": "Anytime",
+    "description": "One of Coimbatore's most loved specialty coffee cafés. Great desserts and a warm atmosphere.",
+    "image_url": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800",
+    "lat": 11.0200, "lng": 76.9700, "duration_hrs": 2, "solo_friendly": true, "group_friendly": true, "indoor": true
+  },
+  {
+    "id": "p052", "name": "Rockfort Temple", "city": "Trichy", "state": "Tamil Nadu",
+    "type": "temple", "moods": ["adventurous", "reflective", "curious"],
+    "tags": ["rock climb", "views", "ancient", "heritage", "spiritual", "city view"],
+    "rating": 4.5, "budget": "low", "best_time": "Early morning",
+    "description": "A 7th-century temple perched on a 83m rock. Climb 417 steps carved into the rock for a stunning panoramic view.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Rockfort_Temple_Trichy.jpg/800px-Rockfort_Temple_Trichy.jpg",
+    "lat": 10.8295, "lng": 78.6872, "duration_hrs": 2, "solo_friendly": true, "group_friendly": true, "indoor": false
+  },
+  {
+    "id": "p053", "name": "Srirangam Temple", "city": "Trichy", "state": "Tamil Nadu",
+    "type": "temple", "moods": ["reflective", "calm", "curious"],
+    "tags": ["largest temple", "dravidian", "UNESCO", "spiritual", "heritage"],
+    "rating": 4.7, "budget": "free", "best_time": "Morning",
+    "description": "The largest functioning Hindu temple in the world — a self-contained temple town on an island.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Srirangam_Temple.jpg/1280px-Srirangam_Temple.jpg",
+    "lat": 10.8603, "lng": 78.6877, "duration_hrs": 3, "solo_friendly": true, "group_friendly": true, "indoor": false
+  },
+  {
+    "id": "p054", "name": "Trichy Street Food at Chinna Kadai", "city": "Trichy", "state": "Tamil Nadu",
+    "type": "restaurant", "moods": ["happy", "social", "calm"],
+    "tags": ["street food", "south indian", "affordable", "local", "authentic"],
+    "rating": 4.3, "budget": "low", "best_time": "Breakfast or dinner",
+    "description": "Trichy's beloved street food hub. Try the local favourites — kari dosa, idiyappam, and fresh coconut chutney.",
+    "image_url": "https://images.unsplash.com/photo-1630383249896-424e482df921?w=800",
+    "lat": 10.8050, "lng": 78.6856, "duration_hrs": 1, "solo_friendly": true, "group_friendly": true, "indoor": false
+  },
+  {
+    "id": "p055", "name": "Vellore Fort", "city": "Vellore", "state": "Tamil Nadu",
+    "type": "heritage", "moods": ["curious", "reflective", "adventurous"],
+    "tags": ["fort", "moat", "history", "mughal", "heritage", "museum"],
+    "rating": 4.3, "budget": "low", "best_time": "Morning",
+    "description": "A 16th-century granite fort surrounded by a moat with crocodiles. One of the best preserved forts in South India.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Vellore_Fort.jpg/1280px-Vellore_Fort.jpg",
+    "lat": 12.9202, "lng": 79.1325, "duration_hrs": 2, "solo_friendly": true, "group_friendly": true, "indoor": false
+  },
+  {
+    "id": "p056", "name": "Golden Temple Vellore", "city": "Vellore", "state": "Tamil Nadu",
+    "type": "temple", "moods": ["reflective", "calm", "curious"],
+    "tags": ["gold", "spiritual", "architecture", "peaceful", "unique"],
+    "rating": 4.6, "budget": "free", "best_time": "Morning",
+    "description": "The Sripuram Golden Temple entirely covered in gold. Stunning at night when illuminated.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Sripuram_Golden_Temple.jpg/800px-Sripuram_Golden_Temple.jpg",
+    "lat": 12.8851, "lng": 79.1350, "duration_hrs": 2, "solo_friendly": true, "group_friendly": true, "indoor": false
+  },
+  {
+    "id": "p057", "name": "Vellore Street Food", "city": "Vellore", "state": "Tamil Nadu",
+    "type": "street walk", "moods": ["happy", "social", "curious"],
+    "tags": ["street food", "biryani", "biriyani", "affordable", "local", "shawarma"],
+    "rating": 4.2, "budget": "low", "best_time": "Evening",
+    "description": "Vellore's vibrant street food scene near the fort area. Biryani, shawarma, and fresh juices.",
+    "image_url": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800",
+    "lat": 12.9202, "lng": 79.1325, "duration_hrs": 1.5, "solo_friendly": true, "group_friendly": true, "indoor": false
+  },
+  {
+    "id": "p058", "name": "Salem Steel Plant Museum", "city": "Salem", "state": "Tamil Nadu",
+    "type": "museum", "moods": ["curious", "creative"],
+    "tags": ["industrial", "unique", "educational", "steel", "history"],
+    "rating": 4.0, "budget": "free", "best_time": "Morning",
+    "description": "A unique museum inside one of India's largest steel plants. Fascinating industrial heritage.",
+    "image_url": "https://images.unsplash.com/photo-1594761051656-33894f9e8a40?w=800",
+    "lat": 11.6643, "lng": 78.1460, "duration_hrs": 2, "solo_friendly": true, "group_friendly": true, "indoor": true
+  },
+  {
+    "id": "p059", "name": "Yercaud Hills Trek", "city": "Salem", "state": "Tamil Nadu",
+    "type": "trekking", "moods": ["adventurous", "energetic", "calm"],
+    "tags": ["trek", "hills", "coffee estates", "nature", "weekend getaway"],
+    "rating": 4.3, "budget": "low", "best_time": "Early morning",
+    "description": "Trek through the Shevaroy Hills near Yercaud. Coffee estates, orchards, and misty valleys.",
+    "image_url": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800",
+    "lat": 11.7745, "lng": 78.2095, "duration_hrs": 4, "solo_friendly": true, "group_friendly": true, "indoor": false
+  },
+  {
+    "id": "p060", "name": "Salem Biryani at Buhari", "city": "Salem", "state": "Tamil Nadu",
+    "type": "restaurant", "moods": ["happy", "social", "calm"],
+    "tags": ["biryani", "biriyani", "south indian", "affordable", "iconic", "local"],
+    "rating": 4.4, "budget": "low", "best_time": "Lunch",
+    "description": "Salem is famous for its unique style of biryani. Buhari is the legendary spot to experience it.",
+    "image_url": "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=800",
+    "lat": 11.6643, "lng": 78.1460, "duration_hrs": 1, "solo_friendly": true, "group_friendly": true, "indoor": true
+  },
+  {
+    "id": "p061", "name": "Gateway of India", "city": "Mumbai", "state": "Maharashtra",
+    "type": "heritage", "moods": ["curious", "happy", "social", "adventurous"],
+    "tags": ["iconic", "waterfront", "history", "tourist", "photography", "mumbai"],
+    "rating": 4.4, "budget": "free", "best_time": "Evening",
+    "description": "The iconic 26-meter arch monument overlooking the Arabian Sea. The gateway to India, both literally and historically.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Mumbai_03-2016_30_Gateway_of_India.jpg/1280px-Mumbai_03-2016_30_Gateway_of_India.jpg",
+    "lat": 18.9220, "lng": 72.8347, "duration_hrs": 2, "solo_friendly": true, "group_friendly": true, "indoor": false
+  },
+  {
+    "id": "p062", "name": "Marine Drive Mumbai", "city": "Mumbai", "state": "Maharashtra",
+    "type": "beach", "moods": ["calm", "romantic", "reflective", "happy"],
+    "tags": ["sunset", "queen's necklace", "walking", "seafront", "iconic"],
+    "rating": 4.5, "budget": "free", "best_time": "Sunset",
+    "description": "The stunning 3.6km coastal road along the Arabian Sea. Iconic at night when it resembles a queen's necklace.",
+    "image_url": "https://images.unsplash.com/photo-1529253355930-ddbe423a2ac7?w=800",
+    "lat": 18.9440, "lng": 72.8231, "duration_hrs": 2, "solo_friendly": true, "group_friendly": true, "indoor": false
+  },
+  {
+    "id": "p063", "name": "Vada Pav at Kirti College", "city": "Mumbai", "state": "Maharashtra",
+    "type": "street walk", "moods": ["happy", "social", "curious"],
+    "tags": ["vada pav", "street food", "mumbai", "affordable", "iconic", "chaat"],
+    "rating": 4.6, "budget": "free", "best_time": "Anytime",
+    "description": "Mumbai's soul food — vada pav. The stalls near Kirti College serve the most authentic ones. Under ₹20 a piece.",
+    "image_url": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800",
+    "lat": 19.0760, "lng": 72.8777, "duration_hrs": 1, "solo_friendly": true, "group_friendly": true, "indoor": false
+  },
+  {
+    "id": "p064", "name": "Dharavi Street Food Walk", "city": "Mumbai", "state": "Maharashtra",
+    "type": "street walk", "moods": ["curious", "adventurous", "social"],
+    "tags": ["street food", "authentic", "local", "affordable", "unique", "mumbai"],
+    "rating": 4.3, "budget": "low", "best_time": "Afternoon",
+    "description": "A guided food walk through Asia's largest slum turned cultural hub. Authentic local food at unbeatable prices.",
+    "image_url": "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=800",
+    "lat": 19.0400, "lng": 72.8500, "duration_hrs": 3, "solo_friendly": false, "group_friendly": true, "indoor": false
+  },
+  {
+    "id": "p065", "name": "Sanjay Gandhi National Park", "city": "Mumbai", "state": "Maharashtra",
+    "type": "wildlife", "moods": ["adventurous", "calm", "energetic"],
+    "tags": ["leopard", "nature", "safari", "forest", "inside city", "unique"],
+    "rating": 4.3, "budget": "low", "best_time": "Morning",
+    "description": "A national park inside Mumbai city with leopards, crocodiles, and ancient Buddhist caves. Unbelievably wild for a metropolis.",
+    "image_url": "https://images.unsplash.com/photo-1564760055775-d63b17a55c44?w=800",
+    "lat": 19.2147, "lng": 72.9106, "duration_hrs": 4, "solo_friendly": true, "group_friendly": true, "indoor": false
+  },
+  {
+    "id": "p066", "name": "Cafe Mondegar Mumbai", "city": "Mumbai", "state": "Maharashtra",
+    "type": "cafe", "moods": ["happy", "social", "creative"],
+    "tags": ["iconic", "murals", "jukebox", "colaba", "beer", "food"],
+    "rating": 4.3, "budget": "medium", "best_time": "Evening",
+    "description": "A legendary Mumbai café near Colaba with Mario Miranda murals, a vintage jukebox, and great food.",
+    "image_url": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800",
+    "lat": 18.9220, "lng": 72.8319, "duration_hrs": 2, "solo_friendly": true, "group_friendly": true, "indoor": true
+  },
+  {
+    "id": "p067", "name": "Chhatrapati Shivaji Museum", "city": "Mumbai", "state": "Maharashtra",
+    "type": "museum", "moods": ["curious", "creative", "calm"],
+    "tags": ["art", "history", "heritage", "mughal", "colonial", "artefacts"],
+    "rating": 4.4, "budget": "medium", "best_time": "Morning",
+    "description": "One of India's finest museums with Mughal miniatures, Buddhist sculptures, and natural history exhibits.",
+    "image_url": "https://images.unsplash.com/photo-1594761051656-33894f9e8a40?w=800",
+    "lat": 18.9269, "lng": 72.8325, "duration_hrs": 2.5, "solo_friendly": true, "group_friendly": true, "indoor": true
+  },
+  {
+    "id": "p068", "name": "Cubbon Park", "city": "Bangalore", "state": "Karnataka",
+    "type": "park", "moods": ["calm", "reflective", "happy", "energetic"],
+    "tags": ["garden", "morning run", "peaceful", "green", "city center"],
+    "rating": 4.4, "budget": "free", "best_time": "Morning",
+    "description": "A 300-acre green lung in the heart of Bangalore with colonial buildings, fountains, and shaded walking paths.",
+    "image_url": "https://images.unsplash.com/photo-1448375240586-882707db888b?w=800",
+    "lat": 12.9763, "lng": 77.5929, "duration_hrs": 2, "solo_friendly": true, "group_friendly": true, "indoor": false
+  },
+  {
+    "id": "p069", "name": "MTR Bangalore", "city": "Bangalore", "state": "Karnataka",
+    "type": "restaurant", "moods": ["happy", "calm", "curious"],
+    "tags": ["masala dosa", "south indian", "iconic", "breakfast", "heritage", "affordable"],
+    "rating": 4.5, "budget": "low", "best_time": "Breakfast",
+    "description": "Mavalli Tiffin Rooms — a Bangalore institution since 1924. The masala dosa here is pure legend.",
+    "image_url": "https://images.unsplash.com/photo-1630383249896-424e482df921?w=800",
+    "lat": 12.9500, "lng": 77.5700, "duration_hrs": 0.5, "solo_friendly": true, "group_friendly": true, "indoor": true
+  },
+  {
+    "id": "p070", "name": "Nandi Hills Sunrise Trek", "city": "Bangalore", "state": "Karnataka",
+    "type": "trekking", "moods": ["adventurous", "energetic", "reflective"],
+    "tags": ["sunrise", "trek", "hills", "cycling", "views", "weekend getaway"],
+    "rating": 4.5, "budget": "low", "best_time": "Pre-dawn",
+    "description": "Drive or cycle up Nandi Hills before sunrise. The view of clouds below you at dawn is absolutely magical.",
+    "image_url": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800",
+    "lat": 13.3702, "lng": 77.6835, "duration_hrs": 5, "solo_friendly": true, "group_friendly": true, "indoor": false
+  },
+  {
+    "id": "p071", "name": "Bangalore Brew Works", "city": "Bangalore", "state": "Karnataka",
+    "type": "restaurant", "moods": ["happy", "social", "energetic"],
+    "tags": ["craft beer", "brewery", "nightlife", "food", "group outing"],
+    "rating": 4.3, "budget": "high", "best_time": "Evening",
+    "description": "One of Bangalore's top craft breweries with rotating seasonal beers, great food, and a lively atmosphere.",
+    "image_url": "https://images.unsplash.com/photo-1555658636-6e4a3ddf938c?w=800",
+    "lat": 12.9716, "lng": 77.5946, "duration_hrs": 3, "solo_friendly": false, "group_friendly": true, "indoor": true
+  },
+  {
+    "id": "p072", "name": "National Gallery of Modern Art Bangalore", "city": "Bangalore", "state": "Karnataka",
+    "type": "museum", "moods": ["creative", "curious", "calm"],
+    "tags": ["modern art", "gallery", "paintings", "sculptures", "solo"],
+    "rating": 4.2, "budget": "low", "best_time": "Anytime",
+    "description": "One of India's finest modern art collections housed in a beautiful colonial building.",
+    "image_url": "https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?w=800",
+    "lat": 12.9949, "lng": 77.5932, "duration_hrs": 2, "solo_friendly": true, "group_friendly": true, "indoor": true
+  },
+  {
+    "id": "p073", "name": "Toit Brewpub Bangalore", "city": "Bangalore", "state": "Karnataka",
+    "type": "cafe", "moods": ["happy", "social", "creative"],
+    "tags": ["craft beer", "pizza", "indiranagar", "rooftop", "lively"],
+    "rating": 4.4, "budget": "high", "best_time": "Evening",
+    "description": "Bangalore's most iconic brewpub. House-brewed beers, great pizza, and a buzzing Indiranagar crowd.",
+    "image_url": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800",
+    "lat": 12.9784, "lng": 77.6408, "duration_hrs": 3, "solo_friendly": true, "group_friendly": true, "indoor": true
+  },
+  {
+    "id": "p074", "name": "Lalbagh Botanical Garden", "city": "Bangalore", "state": "Karnataka",
+    "type": "park", "moods": ["calm", "romantic", "reflective", "creative"],
+    "tags": ["botanical", "flowers", "glass house", "morning walk", "peaceful"],
+    "rating": 4.4, "budget": "low", "best_time": "Morning",
+    "description": "A 240-acre botanical garden with a 19th-century glass house, a 3000-million-year-old rock, and stunning flower shows.",
+    "image_url": "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800",
+    "lat": 12.9507, "lng": 77.5848, "duration_hrs": 2, "solo_friendly": true, "group_friendly": true, "indoor": false
+  },
+  {
+    "id": "p075", "name": "India Gate Delhi", "city": "Delhi", "state": "Delhi",
+    "type": "heritage", "moods": ["curious", "reflective", "happy", "social"],
+    "tags": ["iconic", "war memorial", "history", "evening walk", "photography"],
+    "rating": 4.5, "budget": "free", "best_time": "Evening",
+    "description": "India's iconic 42-meter war memorial on Rajpath. Glorious at dusk when lit up against the evening sky.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/India_gate_2012.jpg/1280px-India_gate_2012.jpg",
+    "lat": 28.6129, "lng": 77.2295, "duration_hrs": 2, "solo_friendly": true, "group_friendly": true, "indoor": false
+  },
+  {
+    "id": "p076", "name": "Paranthe Wali Gali Delhi", "city": "Delhi", "state": "Delhi",
+    "type": "street walk", "moods": ["happy", "curious", "social"],
+    "tags": ["paratha", "street food", "chandni chowk", "iconic", "affordable", "foodie"],
+    "rating": 4.5, "budget": "low", "best_time": "Breakfast or lunch",
+    "description": "A legendary narrow lane in Chandni Chowk serving 150+ years of stuffed parathas. Pure Delhi soul food.",
+    "image_url": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800",
+    "lat": 28.6562, "lng": 77.2310, "duration_hrs": 1.5, "solo_friendly": true, "group_friendly": true, "indoor": false
+  },
+  {
+    "id": "p077", "name": "Humayun's Tomb", "city": "Delhi", "state": "Delhi",
+    "type": "heritage", "moods": ["curious", "reflective", "creative"],
+    "tags": ["UNESCO", "mughal", "architecture", "gardens", "photography", "history"],
+    "rating": 4.6, "budget": "medium", "best_time": "Morning",
+    "description": "The first garden-tomb on the Indian subcontinent and the precursor to the Taj Mahal. Stunning Mughal architecture.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Humayun%27s_Tomb_2.jpg/1280px-Humayun%27s_Tomb_2.jpg",
+    "lat": 28.5933, "lng": 77.2507, "duration_hrs": 2, "solo_friendly": true, "group_friendly": true, "indoor": false
+  },
+  {
+    "id": "p078", "name": "Lodhi Garden", "city": "Delhi", "state": "Delhi",
+    "type": "park", "moods": ["calm", "reflective", "romantic", "creative"],
+    "tags": ["heritage", "tombs", "morning walk", "peaceful", "green"],
+    "rating": 4.5, "budget": "free", "best_time": "Morning",
+    "description": "A stunning 90-acre park with 15th-century Lodhi dynasty tombs. Delhi's most beautiful walking spot.",
+    "image_url": "https://images.unsplash.com/photo-1448375240586-882707db888b?w=800",
+    "lat": 28.5931, "lng": 77.2196, "duration_hrs": 2, "solo_friendly": true, "group_friendly": true, "indoor": false
+  },
+  {
+    "id": "p079", "name": "Karim's Delhi", "city": "Delhi", "state": "Delhi",
+    "type": "restaurant", "moods": ["happy", "social", "curious"],
+    "tags": ["mughlai", "mutton", "nihari", "biryani", "biriyani", "iconic", "old delhi"],
+    "rating": 4.5, "budget": "medium", "best_time": "Lunch",
+    "description": "Since 1913, Karim's near Jama Masjid has served the most legendary Mughlai food in India. The nihari is life-changing.",
+    "image_url": "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=800",
+    "lat": 28.6507, "lng": 77.2334, "duration_hrs": 1.5, "solo_friendly": true, "group_friendly": true, "indoor": true
+  },
+  {
+    "id": "p080", "name": "National Museum Delhi", "city": "Delhi", "state": "Delhi",
+    "type": "museum", "moods": ["curious", "creative", "calm", "reflective"],
+    "tags": ["history", "indus valley", "ancient", "art", "heritage", "educational"],
+    "rating": 4.3, "budget": "medium", "best_time": "Morning",
+    "description": "India's largest museum with 200,000 artefacts spanning 5000 years of history including Indus Valley seals.",
+    "image_url": "https://images.unsplash.com/photo-1594761051656-33894f9e8a40?w=800",
+    "lat": 28.6129, "lng": 77.2194, "duration_hrs": 3, "solo_friendly": true, "group_friendly": true, "indoor": true
+  },
+  {
+    "id": "p081", "name": "Hauz Khas Village", "city": "Delhi", "state": "Delhi",
+    "type": "street walk", "moods": ["creative", "social", "curious", "happy"],
+    "tags": ["art", "cafes", "heritage", "nightlife", "instagram", "boutique"],
+    "rating": 4.3, "budget": "medium", "best_time": "Afternoon or evening",
+    "description": "A medieval reservoir turned hipster village with boutique cafés, art galleries, and a stunning 14th-century complex.",
+    "image_url": "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=800",
+    "lat": 28.5535, "lng": 77.2010, "duration_hrs": 3, "solo_friendly": true, "group_friendly": true, "indoor": false
+  },
+  {
+    "id": "p082", "name": "Charminar", "city": "Hyderabad", "state": "Telangana",
+    "type": "heritage", "moods": ["curious", "reflective", "adventurous"],
+    "tags": ["iconic", "mughal", "history", "photography", "old city", "heritage"],
+    "rating": 4.4, "budget": "low", "best_time": "Evening",
+    "description": "The iconic 16th-century mosque and monument at the heart of Hyderabad's Old City. Stunning when lit up at night.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Charminar_in_Hyderabad.jpg/1280px-Charminar_in_Hyderabad.jpg",
+    "lat": 17.3616, "lng": 78.4747, "duration_hrs": 2, "solo_friendly": true, "group_friendly": true, "indoor": false
+  },
+  {
+    "id": "p083", "name": "Hyderabadi Biryani at Paradise", "city": "Hyderabad", "state": "Telangana",
+    "type": "restaurant", "moods": ["happy", "social", "calm"],
+    "tags": ["biryani", "biriyani", "hyderabadi", "iconic", "dum biryani", "legendary"],
+    "rating": 4.6, "budget": "medium", "best_time": "Lunch",
+    "description": "Paradise Restaurant — the home of authentic Hyderabadi dum biryani since 1953. The gold standard of biryani.",
+    "image_url": "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=800",
+    "lat": 17.4399, "lng": 78.4983, "duration_hrs": 1.5, "solo_friendly": true, "group_friendly": true, "indoor": true
+  },
+  {
+    "id": "p084", "name": "Hussain Sagar Lake", "city": "Hyderabad", "state": "Telangana",
+    "type": "lake", "moods": ["calm", "romantic", "happy", "reflective"],
+    "tags": ["boating", "buddha statue", "lakeside", "sunset", "peaceful"],
+    "rating": 4.2, "budget": "low", "best_time": "Evening",
+    "description": "A stunning heart-shaped lake with a massive Buddha statue on a rock island. Ferry rides at sunset are magical.",
+    "image_url": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800",
+    "lat": 17.4239, "lng": 78.4738, "duration_hrs": 2, "solo_friendly": true, "group_friendly": true, "indoor": false
+  },
+  {
+    "id": "p085", "name": "Salar Jung Museum", "city": "Hyderabad", "state": "Telangana",
+    "type": "museum", "moods": ["curious", "creative", "calm"],
+    "tags": ["art", "collection", "antiques", "world class", "heritage", "history"],
+    "rating": 4.4, "budget": "low", "best_time": "Morning",
+    "description": "One of the world's largest one-man collections. 43,000 artefacts including the famous Veiled Rebecca marble sculpture.",
+    "image_url": "https://images.unsplash.com/photo-1594761051656-33894f9e8a40?w=800",
+    "lat": 17.3713, "lng": 78.4804, "duration_hrs": 3, "solo_friendly": true, "group_friendly": true, "indoor": true
+  },
+  {
+    "id": "p086", "name": "Golconda Fort", "city": "Hyderabad", "state": "Telangana",
+    "type": "heritage", "moods": ["adventurous", "curious", "reflective"],
+    "tags": ["fort", "history", "trekking", "mughal", "views", "heritage"],
+    "rating": 4.4, "budget": "low", "best_time": "Morning",
+    "description": "A magnificent 16th-century fort with an acoustic system so clever, a clap at the base can be heard 1km away at the top.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Golconda_Fort.jpg/1280px-Golconda_Fort.jpg",
+    "lat": 17.3833, "lng": 78.4011, "duration_hrs": 3, "solo_friendly": true, "group_friendly": true, "indoor": false
+  },
+  {
+    "id": "p087", "name": "Irani Chai at Nimrah Cafe", "city": "Hyderabad", "state": "Telangana",
+    "type": "cafe", "moods": ["calm", "happy", "curious"],
+    "tags": ["irani chai", "osmania biscuit", "heritage", "old city", "iconic", "affordable"],
+    "rating": 4.5, "budget": "low", "best_time": "Morning",
+    "description": "A 1930s Irani café near Charminar. The Irani chai and Osmania biscuits are a Hyderabad institution.",
+    "image_url": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800",
+    "lat": 17.3610, "lng": 78.4731, "duration_hrs": 1, "solo_friendly": true, "group_friendly": true, "indoor": true
+  },
+  {
+    "id": "p088", "name": "Victoria Memorial", "city": "Kolkata", "state": "West Bengal",
+    "type": "heritage", "moods": ["curious", "reflective", "creative"],
+    "tags": ["british", "white marble", "history", "museum", "iconic", "colonial"],
+    "rating": 4.5, "budget": "medium", "best_time": "Morning",
+    "description": "A grand white marble monument built in memory of Queen Victoria. The museum inside holds 25,000 colonial artefacts.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Victoria_Memorial_from_the_garden.jpg/1280px-Victoria_Memorial_from_the_garden.jpg",
+    "lat": 22.5448, "lng": 88.3426, "duration_hrs": 2.5, "solo_friendly": true, "group_friendly": true, "indoor": true
+  },
+  {
+    "id": "p089", "name": "Kolkata Street Food Walk", "city": "Kolkata", "state": "West Bengal",
+    "type": "street walk", "moods": ["happy", "social", "curious"],
+    "tags": ["puchka", "kathi roll", "street food", "affordable", "iconic", "foodie"],
+    "rating": 4.7, "budget": "free", "best_time": "Evening",
+    "description": "Kolkata's street food is legendary. Puchka, kathi rolls, jhal muri, and mishti doi — a foodie's pilgrimage.",
+    "image_url": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800",
+    "lat": 22.5726, "lng": 88.3639, "duration_hrs": 2, "solo_friendly": true, "group_friendly": true, "indoor": false
+  },
+  {
+    "id": "p090", "name": "College Street Coffee House", "city": "Kolkata", "state": "West Bengal",
+    "type": "cafe", "moods": ["creative", "curious", "calm", "reflective"],
+    "tags": ["intellectual", "adda", "coffee", "debate", "heritage", "iconic"],
+    "rating": 4.4, "budget": "low", "best_time": "Anytime",
+    "description": "The legendary Indian Coffee House on College Street — 70 years of intellectuals, writers, and students over coffee.",
+    "image_url": "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=800",
+    "lat": 22.5780, "lng": 88.3616, "duration_hrs": 2, "solo_friendly": true, "group_friendly": true, "indoor": true
+  },
+  {
+    "id": "p091", "name": "Howrah Bridge", "city": "Kolkata", "state": "West Bengal",
+    "type": "heritage", "moods": ["curious", "reflective", "adventurous"],
+    "tags": ["iconic", "bridge", "river", "photography", "engineering", "heritage"],
+    "rating": 4.5, "budget": "free", "best_time": "Early morning or evening",
+    "description": "The iconic cantilever bridge over the Hooghly River. One of the busiest bridges in the world — 100,000 vehicles daily.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Howrah_bridge_Calcutta.jpg/1280px-Howrah_bridge_Calcutta.jpg",
+    "lat": 22.5851, "lng": 88.3468, "duration_hrs": 1.5, "solo_friendly": true, "group_friendly": true, "indoor": false
+  },
+  {
+    "id": "p092", "name": "Science City Kolkata", "city": "Kolkata", "state": "West Bengal",
+    "type": "museum", "moods": ["curious", "energetic", "happy"],
+    "tags": ["science", "interactive", "educational", "kids", "space", "technology"],
+    "rating": 4.3, "budget": "medium", "best_time": "Daytime",
+    "description": "Asia's largest science museum with a space theatre, evolution park, and hundreds of interactive exhibits.",
+    "image_url": "https://images.unsplash.com/photo-1594761051656-33894f9e8a40?w=800",
+    "lat": 22.5355, "lng": 88.3953, "duration_hrs": 4, "solo_friendly": true, "group_friendly": true, "indoor": true
+  },
+  {
+    "id": "p093", "name": "Amer Fort Jaipur", "city": "Jaipur", "state": "Rajasthan",
+    "type": "heritage", "moods": ["adventurous", "curious", "creative", "reflective"],
+    "tags": ["fort", "rajput", "elephant ride", "views", "UNESCO", "history"],
+    "rating": 4.6, "budget": "medium", "best_time": "Morning",
+    "description": "A stunning 16th-century fort on a hilltop overlooking Maota Lake. Intricate mirror work and massive courtyards.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Amber_Palace_Jaipur_Rajasthan.jpg/1280px-Amber_Palace_Jaipur_Rajasthan.jpg",
+    "lat": 26.9855, "lng": 75.8513, "duration_hrs": 3, "solo_friendly": true, "group_friendly": true, "indoor": false
+  },
+  {
+    "id": "p094", "name": "Jaipur Street Food at Johari Bazaar", "city": "Jaipur", "state": "Rajasthan",
+    "type": "street walk", "moods": ["happy", "social", "curious"],
+    "tags": ["dal baati churma", "kachori", "lassi", "street food", "rajasthani", "affordable"],
+    "rating": 4.5, "budget": "low", "best_time": "Morning or evening",
+    "description": "Jaipur's legendary bazaar food. Dal baati churma, pyaaz kachori, and the famous Lassiwala's thick cold lassi.",
+    "image_url": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800",
+    "lat": 26.9239, "lng": 75.8267, "duration_hrs": 2, "solo_friendly": true, "group_friendly": true, "indoor": false
+  },
+  {
+    "id": "p095", "name": "Hawa Mahal", "city": "Jaipur", "state": "Rajasthan",
+    "type": "heritage", "moods": ["curious", "creative", "reflective"],
+    "tags": ["pink city", "architecture", "photography", "history", "rajput", "iconic"],
+    "rating": 4.4, "budget": "low", "best_time": "Morning",
+    "description": "The iconic Palace of Winds — 953 small windows designed so royal ladies could watch street life unseen.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Hawa_Mahal_Jaipur.jpg/1280px-Hawa_Mahal_Jaipur.jpg",
+    "lat": 26.9239, "lng": 75.8267, "duration_hrs": 1.5, "solo_friendly": true, "group_friendly": true, "indoor": false
+  },
+  {
+    "id": "p096", "name": "Nahargarh Fort Jaipur", "city": "Jaipur", "state": "Rajasthan",
+    "type": "heritage", "moods": ["adventurous", "reflective", "romantic"],
+    "tags": ["fort", "sunset", "views", "jaipur city view", "trek", "photography"],
+    "rating": 4.4, "budget": "low", "best_time": "Sunset",
+    "description": "A fort perched on the Aravalli hills with breathtaking views of Jaipur city. The sunset here is unforgettable.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Hawa_Mahal_Jaipur.jpg/1280px-Hawa_Mahal_Jaipur.jpg",
+    "lat": 26.9398, "lng": 75.8080, "duration_hrs": 3, "solo_friendly": true, "group_friendly": true, "indoor": false
+  },
+  {
+    "id": "p097", "name": "Goa Beaches", "city": "Goa", "state": "Goa",
+    "type": "beach", "moods": ["happy", "adventurous", "social", "energetic"],
+    "tags": ["beach", "water sports", "sunset", "party", "relaxing", "sea"],
+    "rating": 4.6, "budget": "medium", "best_time": "Evening",
+    "description": "Goa's famous beaches — Baga, Calangute, Anjuna. Water sports, shack food, sunset cocktails, and pure vibes.",
+    "image_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800",
+    "lat": 15.5527, "lng": 73.7626, "duration_hrs": 5, "solo_friendly": true, "group_friendly": true, "indoor": false
+  },
+  {
+    "id": "p098", "name": "Goa Spice Plantation", "city": "Goa", "state": "Goa",
+    "type": "nature", "moods": ["curious", "calm", "adventurous"],
+    "tags": ["spices", "plantation", "nature walk", "organic", "educational", "unique"],
+    "rating": 4.3, "budget": "medium", "best_time": "Morning",
+    "description": "Walk through lush spice gardens — cardamom, pepper, vanilla, and cloves. Includes a traditional Goan lunch.",
+    "image_url": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800",
+    "lat": 15.4909, "lng": 73.8278, "duration_hrs": 3, "solo_friendly": true, "group_friendly": true, "indoor": false
+  },
+  {
+    "id": "p099", "name": "Goan Fish Curry at Fisherman's Wharf", "city": "Goa", "state": "Goa",
+    "type": "restaurant", "moods": ["happy", "calm", "social"],
+    "tags": ["goan food", "fish curry", "seafood", "authentic", "coconut", "prawn"],
+    "rating": 4.5, "budget": "medium", "best_time": "Lunch",
+    "description": "Authentic Goan fish curry and rice at a riverside restaurant. Recheado pomfret, prawn balchao, and sol kadhi.",
+    "image_url": "https://images.unsplash.com/photo-1630383249896-424e482df921?w=800",
+    "lat": 15.4200, "lng": 73.9900, "duration_hrs": 1.5, "solo_friendly": true, "group_friendly": true, "indoor": true
+  },
+  {
+    "id": "p100", "name": "Old Goa Churches", "city": "Goa", "state": "Goa",
+    "type": "heritage", "moods": ["reflective", "curious", "creative"],
+    "tags": ["UNESCO", "portuguese", "church", "history", "architecture", "colonial"],
+    "rating": 4.5, "budget": "free", "best_time": "Morning",
+    "description": "The Basilica of Bom Jesus and Se Cathedral — UNESCO World Heritage churches with St. Francis Xavier's tomb.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Basilica_of_Bom_Jesus.jpg/1280px-Basilica_of_Bom_Jesus.jpg",
+    "lat": 15.5009, "lng": 73.9116, "duration_hrs": 2, "solo_friendly": true, "group_friendly": true, "indoor": false
+  },
+  {
+    "id": "p101", "name": "Kochi Fort Walk", "city": "Kochi", "state": "Kerala",
+    "type": "street walk", "moods": ["creative", "calm", "curious", "romantic"],
+    "tags": ["fort kochi", "colonial", "chinese fishing nets", "street art", "cafe hopping"],
+    "rating": 4.6, "budget": "free", "best_time": "Morning",
+    "description": "Walk through Fort Kochi's colonial streets with Dutch, Portuguese, and British architecture, street art, and cafés.",
+    "image_url": "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=800",
+    "lat": 9.9658, "lng": 76.2421, "duration_hrs": 3, "solo_friendly": true, "group_friendly": true, "indoor": false
+  },
+  {
+    "id": "p102", "name": "Kerala Backwater Houseboat", "city": "Kochi", "state": "Kerala",
+    "type": "outdoor activity", "moods": ["calm", "romantic", "reflective", "adventurous"],
+    "tags": ["houseboat", "backwaters", "alleppey", "serene", "nature", "unique"],
+    "rating": 4.7, "budget": "high", "best_time": "Daytime",
+    "description": "Drift through Kerala's legendary backwaters on a traditional rice boat houseboat. The most serene experience in India.",
+    "image_url": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800",
+    "lat": 9.4981, "lng": 76.3388, "duration_hrs": 8, "solo_friendly": false, "group_friendly": true, "indoor": false
+  },
+  {
+    "id": "p103", "name": "Kochi Seafood at Grandma's", "city": "Kochi", "state": "Kerala",
+    "type": "restaurant", "moods": ["happy", "calm", "curious"],
+    "tags": ["kerala cuisine", "fish molee", "appam", "seafood", "authentic", "coconut"],
+    "rating": 4.5, "budget": "medium", "best_time": "Lunch",
+    "description": "Authentic Kerala home cooking. Fish molee with appam, karimeen pollichathu, and fresh coconut chutney.",
+    "image_url": "https://images.unsplash.com/photo-1630383249896-424e482df921?w=800",
+    "lat": 9.9658, "lng": 76.2421, "duration_hrs": 1.5, "solo_friendly": true, "group_friendly": true, "indoor": true
+  },
+  {
+    "id": "p104", "name": "Mattancherry Spice Market", "city": "Kochi", "state": "Kerala",
+    "type": "street walk", "moods": ["curious", "happy", "creative"],
+    "tags": ["spices", "pepper", "cardamom", "market", "heritage", "photography"],
+    "rating": 4.4, "budget": "free", "best_time": "Morning",
+    "description": "Walk through 500-year-old spice warehouses. The air is thick with pepper, cardamom, and cinnamon.",
+    "image_url": "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=800",
+    "lat": 9.9575, "lng": 76.2601, "duration_hrs": 2, "solo_friendly": true, "group_friendly": true, "indoor": false
+  },
+  {
+    "id": "p105", "name": "Cherai Beach Kochi", "city": "Kochi", "state": "Kerala",
+    "type": "beach", "moods": ["calm", "relaxed", "romantic", "reflective"],
+    "tags": ["beach", "dolphins", "peaceful", "clean", "lagoon", "serene"],
+    "rating": 4.4, "budget": "free", "best_time": "Morning",
+    "description": "A pristine beach 35km from Kochi where a backwater lagoon meets the sea. Spot dolphins if you're lucky.",
+    "image_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800",
+    "lat": 10.1473, "lng": 76.1726, "duration_hrs": 3, "solo_friendly": true, "group_friendly": true, "indoor": false
+  },
+  {
+    "id": "p106", "name": "Mahabalipuram Shore Temple", "city": "Mahabalipuram", "state": "Tamil Nadu",
+    "type": "heritage", "moods": ["adventurous", "reflective", "creative", "curious"],
+    "tags": ["UNESCO", "ancient", "beach", "history", "road trip", "pallava"],
+    "rating": 4.6, "budget": "low", "best_time": "Morning or sunset",
+    "description": "A UNESCO World Heritage site — 7th-century Pallava stone temples on the shores of the Bay of Bengal.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Shore_Temple_Mahabalipuram_2007.jpg/1280px-Shore_Temple_Mahabalipuram_2007.jpg",
+    "lat": 12.6163, "lng": 80.1993, "duration_hrs": 3, "solo_friendly": true, "group_friendly": true, "indoor": false
+  },
+  {
+    "id": "p107", "name": "Chettinad Heritage Village", "city": "Karaikudi", "state": "Tamil Nadu",
+    "type": "heritage", "moods": ["curious", "adventurous", "creative", "reflective"],
+    "tags": ["road trip", "architecture", "antiques", "food", "photography", "chettinad"],
+    "rating": 4.7, "budget": "medium", "best_time": "Morning",
+    "description": "Explore the opulent mansions of the Chettinad region — Italian marble floors, Belgian glass, and teak wood carvings.",
+    "image_url": "https://images.unsplash.com/photo-1587554801471-37976a256db0?w=800",
+    "lat": 10.0733, "lng": 78.7734, "duration_hrs": 5, "solo_friendly": true, "group_friendly": true, "indoor": false
+  },
+  {
+    "id": "p108", "name": "Chettinad Restaurant Karaikudi", "city": "Karaikudi", "state": "Tamil Nadu",
+    "type": "restaurant", "moods": ["happy", "curious", "social"],
+    "tags": ["chettinad cuisine", "spicy", "chicken", "authentic", "local", "pepper"],
+    "rating": 4.6, "budget": "medium", "best_time": "Lunch",
+    "description": "Authentic Chettinad cuisine — fiery chicken curry, kara kuzhambu, and paniyaram. One of India's most complex cuisines.",
+    "image_url": "https://images.unsplash.com/photo-1630383249896-424e482df921?w=800",
+    "lat": 10.0733, "lng": 78.7734, "duration_hrs": 1.5, "solo_friendly": true, "group_friendly": true, "indoor": true
+  },
+  {
+    "id": "p109", "name": "Vedanthangal Bird Sanctuary", "city": "Vedanthangal", "state": "Tamil Nadu",
+    "type": "wildlife", "moods": ["calm", "adventurous", "reflective"],
+    "tags": ["birds", "migratory", "photography", "nature", "weekend drive"],
+    "rating": 4.4, "budget": "low", "best_time": "November to January",
+    "description": "India's oldest bird sanctuary with thousands of migratory birds from Australia and Siberia.",
+    "image_url": "https://images.unsplash.com/photo-1444464666168-49d633b86797?w=800",
+    "lat": 12.5300, "lng": 79.8700, "duration_hrs": 3, "solo_friendly": true, "group_friendly": true, "indoor": false
+  },
+  {
+    "id": "p110", "name": "Stargazing at Kavalur Observatory", "city": "Kavalur", "state": "Tamil Nadu",
+    "type": "science", "moods": ["curious", "reflective", "calm", "adventurous"],
+    "tags": ["astronomy", "telescope", "night drive", "unique", "ISRO", "stars"],
+    "rating": 4.5, "budget": "free", "best_time": "Night",
+    "description": "India's largest optical telescope in the Javadi Hills. A humbling look at the universe on a clear night.",
+    "image_url": "https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=800",
+    "lat": 12.5775, "lng": 78.8270, "duration_hrs": 4, "solo_friendly": true, "group_friendly": true, "indoor": false
+  }
+]

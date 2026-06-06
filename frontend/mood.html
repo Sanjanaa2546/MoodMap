@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MoodMap — Pick Your Mood</title>
+  <link rel="stylesheet" href="/frontend/style.css" />
+</head>
+<body>
+
+  <!-- Background Orbs -->
+  <div class="bg-orb orb1"></div>
+  <div class="bg-orb orb2"></div>
+  <div class="bg-orb orb3"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a href="index.html" class="nav-logo"><span class="logo-dot"></span>MoodMap</a>
+    <div class="nav-links">
+      <a href="saved.html">Saved</a>
+      <a href="index.html" class="nav-cta">Home</a>
+    </div>
+  </nav>
+
+  <!-- Page -->
+  <div class="page-container">
+    <div class="page-inner">
+
+      <!-- Progress -->
+      <div class="progress-bar">
+        <div class="progress-step active"></div>
+        <div class="progress-step"></div>
+        <div class="progress-step"></div>
+      </div>
+
+      <!-- Title -->
+      <div>
+        <p class="step-tag">Step 1 of 3</p>
+        <h1 class="page-title">How are you<br/>feeling today?</h1>
+        <p class="page-sub">Pick the mood that matches your energy right now.</p>
+      </div>
+
+      <!-- Mood Grid -->
+      <div class="card">
+        <div class="mood-grid">
+          <button class="mood-btn" data-mood="relaxed">
+            <span class="mood-emoji-big">😌</span>
+            <div>
+              <div class="mood-name">Relaxed</div>
+              <div class="mood-desc">Beaches, parks, quiet cafes</div>
+            </div>
+          </button>
+          <button class="mood-btn" data-mood="foodie">
+            <span class="mood-emoji-big">🍜</span>
+            <div>
+              <div class="mood-name">Foodie</div>
+              <div class="mood-desc">Street food, restaurants</div>
+            </div>
+          </button>
+          <button class="mood-btn" data-mood="adventure">
+            <span class="mood-emoji-big">⚡</span>
+            <div>
+              <div class="mood-name">Adventure</div>
+              <div class="mood-desc">Sports, treks, go-karting</div>
+            </div>
+          </button>
+          <button class="mood-btn" data-mood="nature">
+            <span class="mood-emoji-big">🌿</span>
+            <div>
+              <div class="mood-name">Nature</div>
+              <div class="mood-desc">Gardens, lakes, wildlife</div>
+            </div>
+          </button>
+          <button class="mood-btn mood-btn-full" data-mood="creative">
+            <span class="mood-emoji-big">🎨</span>
+            <div>
+              <div class="mood-name">Creative</div>
+              <div class="mood-desc">Museums, galleries, bookstores</div>
+            </div>
+          </button>
+        </div>
+      </div>
+
+      <!-- Error -->
+      <div class="error-card" id="errorCard">
+        👆 Please select a mood to continue
+      </div>
+
+      <!-- Next Button -->
+      <button class="btn-next" id="nextBtn">Continue →</button>
+
+    </div>
+  </div>
+
+  <script src="/frontend/script.js"></script>>
+  <script>
+    // Mood selection
+    const moodBtns = document.querySelectorAll('.mood-btn');
+    let selectedMood = null;
+
+    moodBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        moodBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        selectedMood = btn.dataset.mood;
+        document.getElementById('errorCard').classList.remove('visible');
+      });
+    });
+
+    // Next button
+    document.getElementById('nextBtn').addEventListener('click', () => {
+      if (!selectedMood) {
+        document.getElementById('errorCard').classList.add('visible');
+        return;
+      }
+      saveSelection('mood', selectedMood);
+      window.location.href = 'inputs.html';
+    });
+  </script>
+
+</body>
+</html>

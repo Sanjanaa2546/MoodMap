@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MoodMap — Your Details</title>
+ <link rel="stylesheet" href="/frontend/style.css" />
+</head>
+<body>
+
+  <!-- Background Orbs -->
+  <div class="bg-orb orb1"></div>
+  <div class="bg-orb orb2"></div>
+  <div class="bg-orb orb3"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a href="index.html" class="nav-logo"><span class="logo-dot"></span>MoodMap</a>
+    <div class="nav-links">
+      <a href="saved.html">Saved</a>
+      <a href="index.html" class="nav-cta">Home</a>
+    </div>
+  </nav>
+
+  <!-- Page -->
+  <div class="page-container">
+    <div class="page-inner">
+
+      <!-- Progress -->
+      <div class="progress-bar">
+        <div class="progress-step done"></div>
+        <div class="progress-step active"></div>
+        <div class="progress-step"></div>
+      </div>
+
+      <!-- Title -->
+      <div>
+        <p class="step-tag">Step 2 of 3</p>
+        <h1 class="page-title">Set your<br/>details</h1>
+        <p class="page-sub">Tell us where you are and what you're working with.</p>
+      </div>
+
+      <!-- Selected Mood Display -->
+      <div class="mood-recap" id="moodRecap">
+        <span class="mood-recap-label">Your mood</span>
+        <span class="mood-recap-value" id="moodRecapValue">—</span>
+      </div>
+
+      <!-- Inputs -->
+      <div class="card">
+        <div class="card-label">Where are you?</div>
+        <div class="input-wrap">
+          <label>City</label>
+          <input type="text" id="city" placeholder="e.g. Chennai" />
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-label">What are you working with?</div>
+        <div class="input-row">
+          <div class="input-wrap">
+            <label>Budget (₹)</label>
+            <input type="number" id="budget" placeholder="e.g. 500" min="0" />
+          </div>
+          <div class="input-wrap">
+            <label>Time (hrs)</label>
+            <input type="number" id="time" placeholder="e.g. 3" min="1" max="12" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Error -->
+      <div class="error-card" id="errorCard"></div>
+
+      <!-- Buttons -->
+      <div class="btn-row">
+        <a href="mood.html" class="btn-back">← Back</a>
+        <button class="btn-next" id="nextBtn">Find Places →</button>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="/frontend/script.js"></script>
+  <script>
+    // Show selected mood from previous page
+    const mood = getSelection('mood');
+    const moodEmojis = {
+      relaxed: '😌 Relaxed',
+      foodie: '🍜 Foodie',
+      adventure: '⚡ Adventure',
+      nature: '🌿 Nature',
+      creative: '🎨 Creative'
+    };
+    if (mood) {
+      document.getElementById('moodRecapValue').textContent = moodEmojis[mood] || mood;
+    }
+
+    // Pre-fill if user came back
+    if (getSelection('city'))   document.getElementById('city').value   = getSelection('city');
+    if (getSelection('budget')) document.getElementById('budget').value = getSelection('budget');
+    if (getSelection('time'))   document.getElementById('time').value   = getSelection('time');
+
+    // Next button
+    document.getElementById('nextBtn').addEventListener('click', () => {
+      const city   = document.getElementById('city').value.trim();
+      const budget = document.getElementById('budget').value.trim();
+      const time   = document.getElementById('time').value.trim();
+      const err    = document.getElementById('errorCard');
+
+      err.classList.remove('visible');
+
+      if (!mood) {
+        err.textContent = '⚠️ Mood not found — please go back and select one';
+        err.classList.add('visible'); return;
+      }
+      if (!city) {
+        err.textContent = '🏙️ Please enter your city';
+        err.classList.add('visible'); return;
+      }
+      if (!budget) {
+        err.textContent = '💰 Please enter your budget';
+        err.classList.add('visible'); return;
+      }
+      if (!time) {
+        err.textContent = '⏱️ Please enter your available time';
+        err.classList.add('visible'); return;
+      }
+
+      saveSelection('city',   city);
+      saveSelection('budget', budget);
+      saveSelection('time',   time);
+
+      window.location.href = 'results.html';
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MoodMap — Place Details</title>
+  <link rel="stylesheet" href="/frontend/style.css" />
+</head>
+<body>
+
+  <!-- Background Orbs -->
+  <div class="bg-orb orb1"></div>
+  <div class="bg-orb orb2"></div>
+  <div class="bg-orb orb3"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a href="/frontend/index.html" class="nav-logo"><span class="logo-dot"></span>MoodMap</a>
+    <div class="nav-links">
+      <a href="/frontend/saved.html">Saved</a>
+      <a href="/frontend/index.html" class="nav-cta">Home</a>
+    </div>
+  </nav>
+
+  <!-- Page -->
+  <div class="page-container">
+    <div class="page-inner detail-inner">
+
+      <!-- Back -->
+      <a href="/frontend/results.html" class="btn-back" style="width:fit-content">← Back to Results</a>
+
+      <!-- Hero Card -->
+      <div class="detail-hero">
+        <div class="detail-icon" id="detailIcon">📍</div>
+        <div class="detail-hero-text">
+          <div class="place-type" id="detailType">Type</div>
+          <h1 class="detail-name" id="detailName">Place Name</h1>
+          <div class="detail-rating" id="detailRating">⭐ 0.0</div>
+        </div>
+        <button class="detail-save" id="saveBtn" onclick="toggleSave()">🤍 Save</button>
+      </div>
+
+      <!-- Stats Row -->
+      <div class="stats-row">
+        <div class="stat-card">
+          <div class="stat-icon">💰</div>
+          <div class="stat-label">Cost</div>
+          <div class="stat-value" id="detailCost">—</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">⏱️</div>
+          <div class="stat-label">Duration</div>
+          <div class="stat-value" id="detailDuration">—</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">📍</div>
+          <div class="stat-label">City</div>
+          <div class="stat-value" id="detailCity">—</div>
+        </div>
+      </div>
+
+      <!-- Tags -->
+      <div class="card">
+        <div class="card-label">Vibe Tags</div>
+        <div class="place-tags" id="detailTags"></div>
+      </div>
+
+      <!-- AI Suggestion -->
+      <div class="card" id="aiCard">
+        <div class="card-label">✦ AI Suggestion</div>
+        <div class="ai-loading" id="aiLoading">
+          <div class="loading-spinner" style="width:20px;height:20px;border-width:2px;"></div>
+          <span>Generating suggestion...</span>
+        </div>
+        <p class="itinerary-text" id="detailItinerary" style="display:none;"></p>
+      </div>
+
+      <!-- Live Map -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <div id="map" style="height: 220px; border-radius: 20px; overflow: hidden; border: 1px solid rgba(255,255,255,0.07);"></div>
+
+      <!-- CTA -->
+      
+        id="mapsLink"
+        href="#"
+        target="_blank"
+        class="btn-next"
+        style="text-align:center; display:block;"
+      >
+        Open in Google Maps →
+      </a>
+
+    </div>
+  </div>
+
+  <script src="/frontend/script.js"></script>
+  <script>
+    // ===== LOAD PLACE DATA =====
+    const raw   = getSelection('selectedPlace');
+    const city  = getSelection('city') || 'Chennai';
+    const place = raw ? JSON.parse(raw) : null;
+
+    const icons = {
+      'Beach': '🏖️', 'Park': '🌳', 'Cafe': '☕',
+      'Restaurant': '🍽️', 'Street Food': '🍜', 'Outdoor': '🚣',
+      'Theme Park': '🎡', 'Sports': '🏎️', 'Garden': '🌸',
+      'Lake': '💧', 'Museum': '🏛️', 'Bookstore': '📚',
+      'Gallery': '🎨'
+    };
+
+    if (place) {
+
+      // ===== POPULATE DETAILS =====
+      document.getElementById('detailIcon').textContent     = icons[place.type] || '📍';
+      document.getElementById('detailType').textContent     = place.type;
+      document.getElementById('detailName').textContent     = place.name;
+      document.getElementById('detailRating').textContent   = `⭐ ${place.rating}`;
+      document.getElementById('detailCost').textContent     = place.budget === 'free' ? 'Free' : place.budget;
+      document.getElementById('detailDuration').textContent = `${place.duration_hrs} hr(s)`;
+      document.getElementById('detailCity').textContent     = place.city || city;
+      document.getElementById('detailTags').innerHTML       =
+        place.tags.map(t => `<span class="place-tag">${t}</span>`).join('');
+
+      // ===== GOOGLE MAPS LINK =====
+      // Live Map
+    // Live Map
+    if (place.lat && place.lng) {
+    const map = L.map('map').setView([place.lat, place.lng], 14);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© OpenStreetMap'
+    }).addTo(map);
+    L.marker([place.lat, place.lng])
+        .addTo(map)
+        .bindPopup(`<b>${place.name}</b><br>${place.city}`)
+        .openPopup();
+    }
+      document.getElementById('mapsLink').href =
+        `https://www.google.com/maps/search/${encodeURIComponent(place.name + ' ' + (place.city || city))}`;
+
+      // ===== FETCH AI SUGGESTION =====
+      const mood = getSelection('mood') || 'relaxed';
+      fetch(`http://127.0.0.1:8000/api/itinerary?name=${encodeURIComponent(place.name)}&type=${encodeURIComponent(place.type)}&city=${encodeURIComponent(place.city || city)}&mood=${encodeURIComponent(mood)}`)
+        .then(res => res.json())
+        .then(data => {
+          document.getElementById('aiLoading').style.display      = 'none';
+          document.getElementById('detailItinerary').style.display = 'block';
+          document.getElementById('detailItinerary').textContent   = data.suggestion;
+        })
+        .catch(() => {
+          document.getElementById('aiLoading').style.display      = 'none';
+          document.getElementById('detailItinerary').style.display = 'block';
+          document.getElementById('detailItinerary').textContent   = '⚠️ Could not load AI suggestion. Make sure your backend is running.';
+        });
+
+      // ===== CHECK IF ALREADY SAVED =====
+      const saved = JSON.parse(localStorage.getItem('savedPlaces') || '[]');
+      if (saved.includes(place.name)) {
+        document.getElementById('saveBtn').textContent = '💜 Saved';
+        document.getElementById('saveBtn').classList.add('saved');
+      }
+
+    } else {
+      // No place data found — send back to results
+      window.location.href = '/frontend/results.html';
+    }
+
+    // ===== SAVE TOGGLE =====
+    function toggleSave() {
+      if (!place) return;
+      const saved = JSON.parse(localStorage.getItem('savedPlaces') || '[]');
+      const btn   = document.getElementById('saveBtn');
+      if (saved.includes(place.name)) {
+        const updated = saved.filter(n => n !== place.name);
+        localStorage.setItem('savedPlaces', JSON.stringify(updated));
+        btn.textContent = '🤍 Save';
+        btn.classList.remove('saved');
+      } else {
+        saved.push(place.name);
+        localStorage.setItem('savedPlaces', JSON.stringify(saved));
+        btn.textContent = '💜 Saved';
+        btn.classList.add('saved');
+      }
+    }
+  </script>
+
+</body>
+</html>
