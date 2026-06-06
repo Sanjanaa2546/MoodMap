@@ -130,7 +130,7 @@
 
     // ===== FETCH PLACES FROM BACKEND =====
     async function getPlaces() {
-      const res  = await fetch(`http://127.0.0.1:8000/api/recommend?mood=${mood}&city=${encodeURIComponent(city)}`);
+      const res  = await fetch(`/api/recommend?mood=${mood}&city=${encodeURIComponent(city)}`);
       const data = await res.json();
       return data.places;
     }
@@ -201,7 +201,7 @@
         return;
       }
 
-      fetch(`http://127.0.0.1:8000/api/itinerary?name=${encodeURIComponent(topPlace.name)}&type=${encodeURIComponent(topPlace.type)}&city=${encodeURIComponent(topPlace.city || city)}&mood=${encodeURIComponent(mood)}`)
+      fetch(`/api/itinerary?name=${encodeURIComponent(topPlace.name)}&type=${encodeURIComponent(topPlace.type)}&city=${encodeURIComponent(topPlace.city || city)}&mood=${encodeURIComponent(mood)}`)
         .then(res => res.json())
         .then(data => {
           document.getElementById('itineraryLoading').style.display = 'none';
